@@ -7,7 +7,7 @@
 class Palette{
     constructor(hue) {
         this.hue = hue;
-        this.orginalColor = hue;
+        this.originalColor = hue;
         this.warm = null;
         this.cool = null;
         this.element = document.querySelector('.palette')
@@ -43,15 +43,24 @@ class Palette{
     }
 
     lighten() {
-        // console.log(this.hue)
-        // let total = this.hue._rgb[0] + this.hue._rgb[1] + this.hue._rgb[2]
-        // console.log(total)
-        this.hue = chroma(this.hue).brighten(1)
-        this.updateElement()
+        let total;
+        if (typeof this.hue == 'object'){
+            total = this.hue._rgb[0] + this.hue._rgb[1] + this.hue._rgb[2]
+        }
+        if (!total || total < 650){
+            this.hue = chroma(this.hue).brighten(1)
+            this.updateElement()
+        }
     }
     darken() {
-        this.hue = chroma(this.hue).darken(1)
-        this.updateElement()
+        let total;
+        if (typeof this.hue == 'object') {
+            total = this.hue._rgb[0] + this.hue._rgb[1] + this.hue._rgb[2]
+        }
+        if (!total || total > 100) {
+            this.hue = chroma(this.hue).darken(1)
+            this.updateElement()
+        }
     }
     sat() {
         this.hue = chroma(this.hue).saturate(1)
@@ -70,8 +79,8 @@ class Palette{
         this.updateElement()
     }
     reset() {
-        this.hue = this.orginalColor
-        this.resetElement()
+        this.hue = this.originalColor
+        this.updateElement()
         
     }
 }
@@ -79,7 +88,7 @@ class Palette{
 let colorPalette = new Palette('white')
 
 class Color{
-    constructor(hue, warm, cool,paletteToChange) {
+    constructor(hue, warm, cool, paletteToChange) {
         this.hue = hue;
         this.warm = warm;
         this.cool = cool;
@@ -118,6 +127,7 @@ let blacks = new Color('rgb(0, 0, 0)', 'red', 'blue', colorPalette)
 
 lightenButton.addEventListener('click', (event) => {
     colorPalette.lighten()
+
 })
 
 darkenButton.addEventListener('click', (event) => {

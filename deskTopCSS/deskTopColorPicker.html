@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Desktop HTML & CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="desktop.css" />
+</head>
+<body>
+    <div class="navbar">
+        <ul class="menu">
+            <li class="nav-button">home</li>
+            <li class="nav-button">about</li>
+            <li class="nav-button">log out</li>
+        </ul>
+    </div>
+    <div class="header"><span class="title">eMoceans</span></div>
+    <div class="outer-wrapper">
+        <div class="container-left">
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+        </div>
+        <div class="container-right">
+            <div class="top-right">
+                <div class="palette"></div>
+                <div class="button-container">
+                    <button>Lighten</button>
+                    <button>Darken</button>
+                    <button>Saturate</button>
+                    <button>Desaturate</button>
+                    <button>Warm</button>
+                    <button>Cool</button>
+                    <button>Reset</button>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="wordAssoc">
+                    <h3>Often associated with [insertColorHere]...</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus vel explicabo culpa itaque labore officia dolorum similique, beatae inventore minima eum fugiat impedit corporis, eveniet temporibus sit magni eaque autem? </p>
+                </div>
+                <form class="form" id="form" action="/addMood" method="post">
+                    
+                        <label for="mood">Mood:</label> <input type="text" id="mood" name="newMood">
+                    
+                        <label for="color">Color:</label> <input type="color" id="colorChoice" name="newColor">
+                    
+                        <label for="date">Date:</label> <input type="date" id="date" name="newDate">
+                    
+                        <label for="msg">Add Note:</label> <textarea id="msg" name="newNote"></textarea>
+                    
+                    <div class="button">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">Footer</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
