@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>emOceans-Welcome</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Muli|Nova+Cut|Nova+Mono|Nova+Oval|Rajdhani" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/splash.css' />
+
+</head>
+
+<body>
+
+    <header class="v-header container">
+        <div class="fullscreen-video-wrap">
+            <video src="/images/eMoceanOverView.mp4" autoplay loop muted></video>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>User Login</h1>
+            <form class="form" id="form" action="/addMood" method="post">
+                <label for="userName">User Name:</label> <input type="text" id="userName" name="userName">
+                <label for="password">Password:</label> <input type="text" id="password" name="password">                
+                <div class="button">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
