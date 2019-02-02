@@ -75,8 +75,25 @@ router.get("/create", (req, res, next) => {
 })
 
 router.post("/addMood", (req, res, next) => {
-  
-  // res.json(req.body)
+  const newMood = req.body.newMood;
+  const newColor = req.body.newColor;
+  const newNote = req.body.newNote;
+  const newDate = req.body.newDate;
+  const userId = req.body.userId;
+  const insertQuery = `INSERT INTO moodData(mood, color, note, date)
+    VALUES
+    (?, ?, ?, ?)
+    WHERE uid = ?;`
+  connection.query(insertQuery, [newMood, newColor, newNote, newDate, userId], (err, results) => {
+    if (err) {
+      throw err;
+    } else {
+
+      res.json(req.body)
+      // res.redirect('myAccount')
+    }
+  })
+  res.json(req.body)
 })
 //above function will also res.redirect to /moodBoards when it's working!
 

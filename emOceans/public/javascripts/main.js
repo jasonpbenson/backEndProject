@@ -68,12 +68,12 @@ class Palette{
     }
 
     warmer() {
-        this.hue = chroma.mix(this.hue, this.warm)
+        this.hue = chroma.mix(this.hue, this.warm, 0.25)
         this.updateElement()
     }
 
     cooler() {
-        this.hue = chroma.mix(this.hue, this.cool)
+        this.hue = chroma.mix(this.hue, this.cool, 0.25)
         this.updateElement()
     }
 
