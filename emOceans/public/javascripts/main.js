@@ -108,6 +108,7 @@ class Color{
             paletteToChange.setCool(this.cool);
             paletteToChange.setWarm(this.warm);
             paletteToChange.setOriginalColor(this.hue);
+            document.querySelector('.swatchContainer').classList.add('hidden')
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
