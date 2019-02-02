@@ -1,3 +1,9 @@
+/* font styles
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Nova Mono', monospace;
+font-family: 'Nova Oval', cursive;
+font-family: 'Nova Cut', cursive; */
+
 /* MOBILE SHARED CSS =======================================================> */
 
 body{
@@ -60,7 +66,7 @@ img{
 }
 
 .main{
-    height: 70vh;
+    height: 100vh;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -68,29 +74,28 @@ img{
 }
 
 .footer{
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    justify-content: center;
     background: #175bf4;
-    height: 10vh;
-    width: auto; 
-    margin-top: 2rem;
+    height: 8vh;
+    width: 100vw;
+    opacity: .8;
+    position: fixed;
+    top: 92vh;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
 }
-
-
 
 /* mobile =================================================*/
 
-.hide{
-    visibility: hidden;
+.editorHide{
+    display: none;
 }
 
 .title{
     height: 20;
     text-align: center;
     vertical-align: middle;
-    margin-top: 4rem;
+    margin-top: 4.4rem;
     font-family: 'Nova Oval', cursive;
     font-size: 2rem;
     color: white;
@@ -102,8 +107,7 @@ img{
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
-    margin-top: 5rem;
-    padding-top: 1rem;
+    padding-top: .5rem;
 }
 
 .swatch{
@@ -116,7 +120,7 @@ img{
     border-radius: 50%;
 }
 
-.moodBoards{
+/* .moodBoards{
     padding-top: 1.5rem;
     font-family: 'Nova Oval', cursive;
     font-size: 1rem;
@@ -131,26 +135,32 @@ img{
     color: white;
     margin-left: 1rem;
     margin-right: 1rem;
-}
+} */
 
 a{
     text-decoration: none;
 }
 
+.swatchHidden{
+    display: none;
+}
+
+
 /* mood editor CSS ==============================================> */
+
 .title{
     height: 20;
     text-align: center;
     vertical-align: middle;
-    margin-top: 1.5rem;
+    margin-top: 6.5rem;
     font-family: 'Nova Oval', cursive;
     font-size: 2rem;
     color: white;
 }
 
-.editorBody{
-    margin-top: 1rem;
-    height: 30vh;
+.editorContainer{
+    margin-top: 4rem;
+    height: 70vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -168,10 +178,9 @@ button{
     margin-left: 1rem;
 }
 
-.userPalette{
+.palette{
     height: 10rem;
     width: 10rem;
-    background: grey;
     border-radius: 50%;
 }
 
