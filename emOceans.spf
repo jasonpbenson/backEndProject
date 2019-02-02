@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>emOceans</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>3234707397946291084</string>
+			<key>name</key>
+			<string>webdev</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>latin1</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDE2VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClJpZNIeHy0uXxAPTlNN
+			dXRhYmxlU3RyaW5noy0vMFhOU1N0cmluZ1hOU09iamVjdNIeHzIz
+			Xk5TTXV0YWJsZUFycmF5ozI0NVdOU0FycmF5WE5TT2JqZWN00h4f
+			IjeiIjhYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLROzxUZGF0
+			YYABAAgAEQAaACMALQAyADcARQBLAFIAWgBlAGwAcAByAHQAdgB6
+			AHwAfgCAAIIAhwCMAJEAugDBAMIAwwDFAMoA1QDeAPQA+AEFAQ4B
+			EwEVARcBGQEeASgBKgEtATIBRAFIAVEBWgFfAW4BcgF6AYMBiAGL
+			AZQBpgGpAa4AAAAAAAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB
+			sA==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {991, 618}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>table</key>
+			<string>users</string>
+			<key>view</key>
+			<string>SP_VIEW_STRUCTURE</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>ALTER table votes
+	ADD foreign key (aid) REFERENCES animals(id)</string>
+		<string>SELECT * from restaurants where lastTimeAte &lt; '2018-12-01' and stars = 5</string>
+		<string>SELECT * from restaurants where lastTimeAte &lt; '2018-12-01'</string>
+		<string>SELECT * from restaurants where lastTimeAte &lt; 2018-12-01</string>
+		<string>SELECT * from restaurants where lastTimeAte &gt; 2018-12-01</string>
+		<string>SELECT * from restaurants where lastTimeAte &gt; 2018-08-01</string>
+		<string>UPDATE restaurants SET doesTakeOut = 1
+where name = 'Gato'</string>
+		<string>SELECT * from restaurants where doesTakeOut = 1 AND category = 'Southern'</string>
+		<string>SELECT * from restaurants where doesTakeOut = 1</string>
+		<string>SELECT * from restaurants where category = 'Southern'</string>
+		<string>SELECT id from restaurants where name = 'Dish Dive'</string>
+		<string>update restaurants set id = 12
+where id = 15</string>
+		<string>update restaurants set id = 11
+where id = 14</string>
+		<string>update restaurants set id = 10
+where id = 13</string>
+		<string>SELECT favoriteDish FROM restaurants WHERE stars &gt; 4</string>
+		<string>SELECT favoriteDishes FROM restaurants WHERE stars &gt; 4</string>
+		<string>SELECT * from restaurants WHERE stars &gt; 4</string>
+		<string>SELECT * from restaurants WHERE stars &gt; 5</string>
+		<string>INSERT INTO restaurants (name, distance, stars, category, favoriteDish, doesTakeOut, lastTimeAte)
+	VALUES
+	('Petit Chou', '7 miles', 5, 'French', 'Dejeuner American', 0, '2018-08-25'),
+	('Gato', '8 miles', 4, 'Breakfast', 'Biscuit with Egg', 10, '2018-12-11'),
+	('Wrecking Bar Brewpub', '6 miles', 4, 'New American', 'Citrus Salad', 0, '2017-12-01')</string>
+		<string>DELETE from restaurants where id IN (10,11,12)</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.25</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
