@@ -1,36 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// do all these declarations belong in here or in app.js?????????????????????
-const config = require('./config');
+const config = require('../config');
 
 var bcrypt = require('bcrypt-nodejs');
-
-var helmet = require('helmet');
-app.use(helmet());
-
-var expressSession = require('express-session');
-const sessionOptions = {
-  secret: config.sessionSecret,
-  resave: false,
-  saveUnitialized: true,
-  // cookie: {secure: true}
-};
-app.use(expressSession(sessionOptions))
-
-// DO WE NEED THIS? or something like it? should it be in app.js?
-app.use('*', (req, res, next) => {
-  if (req.session.loggedIn) {
-    res.locals.name = req.session.name
-    res.locals.email = req.session.name
-    res.locals.loggedIn = true;
-  } else {
-    res.locals.name = "";
-    res.locals.email = "";
-    res.locals.loggedIn = false;
-  }
-  next();
-})
 
 var mysql = require('mysql');
 let connection = mysql.createConnection(config.db);
@@ -41,17 +14,28 @@ router.get('/', function (req, res, next) {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
+    let msg;
+    if (req.query.msg == 'regSuccess') {
+      msg = "You're all signed up! Click on a color below that resemebles you you've felt today, add a mood, a note, if you like, and click save!";
+      console.log(msg)
+    } else if (req.query.msg == 'loginSuccess') {
+      msg = "You're logged in."
+    }
     res.render('index')
   }
 });
+
+router.get('/splash', (req, res, next) => {
+  res.render('splash')
+})
 
 router.get("/login", (req, res, next) => {
   res.render("login");
 })
 
 // loginProcess
-app.post('/loginProcess', (req, res, next) => {
-  res.json(req.body)
+router.post('/loginProcess', (req, res, next) => {
+  // res.json(req.body)
 })
 
 router.get("/register", (req, res, next) => {
@@ -65,8 +49,25 @@ router.get("/register", (req, res, next) => {
 })
  
 // registerProcess
-app.post('/registerProcess', (req, res, next) => {
-  res.json(req.body)
+router.post('/registerProcess', (req, res, next) => {
+  const hashedPass = bcrypt.hashSync(req.body.password);
+  const checkUserQuery = `SELECT * FROM users WHERE email = ?`;
+  connection.query(checkUserQuery, [req.body.email], (error, results) => {
+    if(error){throw error}
+    console.log("results",results);
+    if (results.length != 0) {
+      res.redirect('/register?msg=registered')
+    }else{
+      const insertQuery = `INSERT INTO users (firstName, lastName, email, hash, phone)
+      VALUES 
+      (?,?,?,?,?)`;
+      connection.query(insertQuery, [req.body.firstName,req.body.lastName, req.body.email, hashedPass, req.body.phone], (error2, results2) => {
+        if(error2) {throw error2}
+        res.redirect('/?msg=regSuccess')
+      })
+    }
+  })
+  // res.json(req.body)
 })
 
 router.get("/create", (req, res, next) => {
@@ -74,7 +75,8 @@ router.get("/create", (req, res, next) => {
 })
 
 router.post("/addMood", (req, res, next) => {
-  res.json(req.body)
+  
+  // res.json(req.body)
 })
 //above function will also res.redirect to /moodBoards when it's working!
 

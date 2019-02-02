@@ -172,6 +172,5 @@ resetButton.addEventListener('click', (event) => {
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
-    console.log(formColor.value)
 })
 

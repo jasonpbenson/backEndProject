@@ -9,6 +9,33 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var helmet = require('helmet');
+app.use(helmet());
+
+const config = require('./config');
+
+var expressSession = require('express-session');
+const sessionOptions = {
+  secret: config.sessionSecret,
+  resave: false,
+  saveUnitialized: true,
+  // cookie: {secure: true}
+};
+app.use(expressSession(sessionOptions))
+
+app.use('*', (req, res, next) => {
+  if (req.session.loggedIn) {
+    res.locals.name = req.session.name
+    res.locals.email = req.session.name
+    res.locals.loggedIn = true;
+  } else {
+    res.locals.name = "";
+    res.locals.email = "";
+    res.locals.loggedIn = false;
+  }
+  next();
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
