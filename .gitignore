@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-reference-material
-wireframes
-test-app
-=======
-.DS_Store
+testFiles
 node_modules
-emoceans-headertoobright.ai
+config.js
+.DS_Store
 
->>>>>>> master

@@ -63,7 +63,7 @@ router.get("/register", (req, res, next) => {
     msg
   });
 })
-
+ 
 // registerProcess
 app.post('/registerProcess', (req, res, next) => {
   res.json(req.body)
