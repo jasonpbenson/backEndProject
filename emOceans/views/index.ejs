@@ -12,7 +12,9 @@
 <body>
     <% include navbar %>
     <div class="outerWrapper">
-
+        <h2 class="text-info">
+            <%= msg %>
+        </h2>
         <section class="main">
             <div class="title">NEW MOOD</div>
             <div class="swatchContainer">
@@ -55,7 +57,7 @@
                 </div>
                 <form class="form" id="moodForm" action="/addMood" method="post">
                     <label for="mood">Mood:</label> <input type="text" id="mood" name="newMood">
-                    <label for="colCode">Code:</label> <input type="text" id="colorCode" name="newColor">
+                    <label for="colCode"></label> <input type="hidden" id="colorCode" name="newColor">
                     <label for="date">Date:</label> <input type="date" id="date" name="newDate">
                     <label for="msg">Add Note:</label> <textarea id="msg" name="newNote"></textarea>
                     <div class="button">
