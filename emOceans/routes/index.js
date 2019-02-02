@@ -118,16 +118,19 @@ router.post("/addMood", (req, res, next) => {
     } else { 
 
       res.json(req.body)
-      // res.redirect('myAccount')
+      //res.redirect('moodBoards')
     }
   })
-//   res.json(req.body)
 })
-//above function will also res.redirect to /moodBoards when it's working!
+
 
 router.get("/moodBoards", (req, res, next) => {
-  res.render("create");
+  res.render("moodBoards");
 })
+
+router.get("/about"), (req, res, next) => {
+  
+}
 
 
 router.get('/logout', (req, res, next) => {
