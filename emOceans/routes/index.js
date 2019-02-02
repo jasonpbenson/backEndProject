@@ -55,7 +55,13 @@ app.post('/loginProcess', (req, res, next) => {
 })
 
 router.get("/register", (req, res, next) => {
-  res.render("register");
+  let msg;
+  if (req.query.mes == 'registered') {
+    msg = 'This email address is already registered.'
+  }
+  res.render("register", {
+    msg
+  });
 })
 
 // registerProcess
