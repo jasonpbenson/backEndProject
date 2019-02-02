@@ -1,0 +1,364 @@
+/* font styles
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Nova Mono', monospace;
+font-family: 'Nova Oval', cursive;
+font-family: 'Nova Cut', cursive; */
+
+/* color selector CSS ====================================================> */
+
+.title{
+    height: 20;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1.5rem;
+    font-family: 'Nova Oval', cursive;
+    font-size: 2rem;
+    color: white;
+}
+
+.swatchContainer{
+    height: 80;
+    width: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+
+.colorSwatch{
+    width: 5.2rem;
+    height: 5.2rem;
+    margin: 8px;
+    background: grey;
+    border-radius: 15px;
+}
+
+.moodBoards{
+    padding-top: 1.5rem;
+    font-family: 'Nova Oval', cursive;
+    font-size: 1rem;
+    color: white;
+    margin-right: 3rem;
+}
+
+.nextPage{
+    padding-top: 1.5rem;
+    font-family: 'Nova Oval', cursive;
+    font-size: 1rem;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* mood editor CSS ==============================================> */
+.title{
+    height: 20;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1.5rem;
+    font-family: 'Nova Oval', cursive;
+    font-size: 2rem;
+    color: white;
+}
+
+.editorBody{
+    margin-top: 1rem;
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+button{
+    font-family: 'Nova Oval', cursive;
+    font-size: 1rem;
+    color: #4c0be8; 
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 1rem;
+}
+
+.userPalette{
+    height: 10rem;
+    width: 10rem;
+    background: grey;
+    border-radius: 50%;
+}
+
+.colorInfo{
+    font-family: 'Nova Oval', cursive;
+    font-size: .8rem;
+    color: #4c0be8; 
+    text-align: center;
+    align-self: center;
+    margin: 2rem;
+}
+
+.inputs{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.mood{
+    font-family: 'Nova Oval', cursive;
+    font-size: 1.5rem;
+    color: #4c0be8; 
+    appearance: none;
+}
+
+.notes{
+    font-family: 'Nova Oval', cursive;
+    font-size: 1.5rem;
+    color: #4c0be8; 
+    overflow: hidden;
+}
+
+.saveButton{
+    padding-top: 1.5rem;
+    font-family: 'Nova Oval', cursive;
+    font-size: 1rem;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* SHARED CSS ============================================================> */
+
+body{
+    background-image: url("images/01.backgroundimg_invert.jpg");
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #cdcfed;
+    background-size: auto 100vh;
+    opacity: .8;
+}
+.header{
+    background-color: #4c0be8;
+    height: 15vh;
+    width: 100vw;
+    opacity: .9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.logoContainer{
+    display: flex;
+    height: 15vw;
+    width: 70vw;
+    align-items: center;
+    justify-items: flex-start;
+}
+
+.logo{
+    height: 100%;
+    margin-left: .5rem;
+}
+
+.dropMenuIcon{
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50px;
+    background: #b3f417;
+    margin-left: 1.5rem;
+}
+
+.body{
+    height: 70vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+    background: #175bf4;
+    height: 10vh;
+    width: auto; 
+    margin-top: 2rem;
+}
+
+
+/* DESKTOP VERSION =====================================================> */
+
+body {
+    margin: 0;
+    background-color: rgb(239, 241, 245);
+    overflow-x: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 2rem;
+    margin: 0;
+    z-index: 1;
+}
+
+.menu {
+    position: absolute;
+    right: 10px;
+    height: 2rem;
+    
+}
+
+ul {
+    margin: 5px;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    vertical-align: middle;
+}
+
+.nav-button {
+    margin: 10px 5px;
+    vertical-align: middle;
+    /* I'm having issues with these aligning to the middle, is it because
+    the parent container's position is absolute?; i do it above with the margin 
+    but that doens't seem like the best solutions */
+}
+
+.header {
+    width: 40%;
+    height: 4rem;
+    position: relative;
+    top:2rem;
+    left: 1rem;
+    
+}
+
+.title {
+    font-size: 36pt;
+    margin: 1rem;
+}
+
+.outer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.container-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+    margin: 2rem 1rem;
+}
+
+.color {
+    background-color: gray;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 5px;
+
+}
+
+.container-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+
+.top-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.palette {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+
+button {
+    margin: 2px;
+    background-color: rgb(215, 215, 215);
+    font-size: 14px;
+    
+}
+
+.bottom-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    justify-content: center;
+
+}
+
+.word-assoc {
+    width: 40%;
+    margin: 0;
+}
+
+
+form {
+    width: 75%;
+    margin: 0.5 0rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form label,
+form input {
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+}
+
+form input {
+    font-size: 12pt;
+    font-family: inherit;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    font-family: inherit;
+    font-size: 14px;
+}

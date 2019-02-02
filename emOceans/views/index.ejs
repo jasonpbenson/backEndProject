@@ -1,29 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>emOceans-Welcome</title>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Muli|Nova+Cut|Nova+Mono|Nova+Oval|Rajdhani" rel="stylesheet">
+    <title>emOceans-create</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='/stylesheets/splash.css'/>
-
+    <% include headerLinks %>
 </head>
-<body>
 
-    <header class="v-header container">
-        <div class="fullscreen-video-wrap">
-            <video src="/images/eMoceanOverView.mp4" autoplay loop muted></video>
-        </div>
-        <div class="header-overlay"></div>
-        <div class="header-content">
-            <img id="logo" src="/images/logo.png">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, atque.</p>
-            <a href="register" class="btn">Register</a>
-            <a href="login" class="btn">Login</a>
-        </div>
-    </header>
-    
+<body>
+    <% include navbar %>
+    <div class="outerWrapper">
+
+        <section class="main">
+            <div class="title">NEW MOOD</div>
+            <div class="swatchContainer">
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+            </div>
+        </section>
+        <section class="editorContainer hide">
+            <div class="paletteContainer">
+                <div class="palette"></div>
+                <div class="buttonContainer">
+                    <button id="lighten">Lighten</button>
+                    <button id="darken">Darken</button>
+                    <button id="sat">Saturate</button>
+                    <button id="desat">Desaturate</button>
+                    <button id="warm">Warm</button>
+                    <button id="cool">Cool</button>
+                    <button id="reset">Reset</button>
+                    <button id="save">Save Color</button>
+                </div>
+            </div>
+            <div class="submitContainer">
+                <div class="wordAssoc">
+                    <h3>Often associated with [insertColorHere]...</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus vel explicabo culpa itaque
+                        labore
+                        officia dolorum similique, beatae inventore minima eum fugiat impedit corporis, eveniet
+                        temporibus sit
+                        magni eaque autem?</p>
+                </div>
+                <form class="form" id="moodForm" action="/addMood" method="post">
+                    <label for="mood">Mood:</label> <input type="text" id="mood" name="newMood">
+                    <label for="colCode">Code:</label> <input type="text" id="colorCode" name="newColor">
+                    <label for="date">Date:</label> <input type="date" id="date" name="newDate">
+                    <label for="msg">Add Note:</label> <textarea id="msg" name="newNote"></textarea>
+                    <div class="button">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </div>
+    <% include footer %>
     <script src="main.js"></script>
 </body>
+
 </html>
