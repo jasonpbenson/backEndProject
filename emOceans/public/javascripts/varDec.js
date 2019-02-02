@@ -6,9 +6,9 @@ let desatButton = document.getElementById('desat');
 let warmButton = document.getElementById('warm');
 let coolButton = document.getElementById('cool');
 let resetButton = document.getElementById('reset');
+let saveButton = document.getElementById('save')
 
 // MOOD FORM VARIABLE DECLARATIONS ============================================>
 let moodForm = document.getElementById('moodForm')
 let formColor = document.getElementById('colorChoice')
 let palette = document.getElementById('palette')
-let saveButton = document.getElementById('save')

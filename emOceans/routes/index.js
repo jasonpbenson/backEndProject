@@ -9,6 +9,8 @@ var mysql = require('mysql');
 let connection = mysql.createConnection(config.db);
 connection.connect();
 
+var expressSession = require('express-session');
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   if (!req.session.loggedIn) {
@@ -53,8 +55,10 @@ router.post('/loginProcess',(req, res, next)=>{
               res.redirect('/login?msg=badPass');
           }else{
               console.log(results[0].id)
-              req.session.name = results[0].name;
+              req.session.firstName = results[0].firstName;
+              req.session.lastName = results[0].lastName;
               req.session.email = results[0].email;
+              req.session.uid = results[0].id
               req.session.loggedIn = true;
               res.redirect('/?msg=loginSuccess');
           };
@@ -103,21 +107,21 @@ router.post("/addMood", (req, res, next) => {
   const newColor = req.body.newColor;
   const newNote = req.body.newNote;
   const newDate = req.body.newDate;
-  const userId = req.body.userId;
-  const insertQuery = `INSERT INTO moodData(mood, color, note, date)
+  const userId = req.session.uid;
+  console.log(userId)
+  const insertQuery = `INSERT INTO moodData(id, mood, color, note, date, uid)
     VALUES
-    (?, ?, ?, ?)
-    WHERE uid = ?;`
+    (DEFAULT, ?, ?, ?, ?, ?);`
   connection.query(insertQuery, [newMood, newColor, newNote, newDate, userId], (err, results) => {
     if (err) {
       throw err;
-    } else {
+    } else { 
 
       res.json(req.body)
       // res.redirect('myAccount')
     }
   })
-  res.json(req.body)
+//   res.json(req.body)
 })
 //above function will also res.redirect to /moodBoards when it's working!
 
@@ -133,3 +137,4 @@ router.get('/logout', (req, res, next) => {
 })
 
 module.exports = router;
+

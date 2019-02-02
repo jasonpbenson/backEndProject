@@ -25,12 +25,16 @@ app.use(expressSession(sessionOptions))
 
 app.use('*', (req, res, next) => {
   if (req.session.loggedIn) {
-    res.locals.name = req.session.name
+    res.locals.firstName = req.session.firstName
+    res.locals.lastName = req.session.lastName
     res.locals.email = req.session.name
+    res.locals.uid = req.session.uid
     res.locals.loggedIn = true;
   } else {
-    res.locals.name = "";
+    res.locals.firstName = "";
+    res.locals.lastName = "";
     res.locals.email = "";
+    res.locals.id = "";
     res.locals.loggedIn = false;
   }
   next();
