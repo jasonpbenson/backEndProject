@@ -1,0 +1,66 @@
+
+    <div class="container">
+        <section class="body">
+            <div class="title">NEW MOOD</div>
+            <div class="swatchContainer">
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+                <div class="swatch"></div>
+            </div>
+        </section>
+        <section class="palette-form">
+            <div class="palette-obj">
+                <div class="palette"></div>
+                <div class="button-container">
+                    <button>Lighten</button>
+                    <button>Darken</button>
+                    <button>Saturate</button>
+                    <button>Desaturate</button>
+                    <button>Warm</button>
+                    <button>Cool</button>
+                    <button>Reset</button>
+                </div>
+            </div>
+            <div class="words-form">
+                <div class="wordAssoc">
+                    <h3>Often associated with [insertColorHere]...</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus vel explicabo culpa itaque labore
+                        officia dolorum similique, beatae inventore minima eum fugiat impedit corporis, eveniet temporibus sit
+                        magni eaque autem? </p>
+                </div>
+                <form class="form" id="form" action="/addMood" method="post">
+        
+                    <label for="mood">Mood:</label> <input type="text" id="mood" name="newMood">
+        
+                    <label for="color">Color:</label> <input type="color" id="colorChoice" name="newColor">
+        
+                    <label for="date">Date:</label> <input type="date" id="date" name="newDate">
+        
+                    <label for="msg">Add Note:</label> <textarea id="msg" name="newNote"></textarea>
+        
+                    <div class="button">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+    </div>
+
+
+<% include footer %> 
+<script src="/javascripts/main.js"></script>
+
+</body>
+</html>
