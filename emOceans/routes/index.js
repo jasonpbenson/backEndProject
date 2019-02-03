@@ -118,13 +118,8 @@ router.post("/addMood", (req, res, next) => {
     VALUES
     (DEFAULT, ?, ?, ?, ?, ?);`
   connection.query(insertQuery, [newMood, newColor, newNote, newDate, userId], (err, results) => {
-    if (err) {
-      throw err;
-    } else { 
-
-      res.json(req.body)
-      //res.redirect('moodBoards')
-    }
+    if (err) {throw err};
+    res.redirect("/?msg=moodBoardAdded")
   })
 })
 
