@@ -110,6 +110,7 @@ class Color{
             paletteToChange.setOriginalColor(this.hue);
             document.querySelector(".swatchContainer").classList.add("swatchHidden");
             document.querySelector(".editorContainer").classList.remove("editorHide");
+            document.querySelector(".paletteContainer").classList.remove("paletteHide");
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
@@ -174,5 +175,7 @@ resetButton.addEventListener('click', (event) => {
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
+    document.querySelector(".editorContainer").classList.add("editorHidden2");
+    document.querySelector(".submitContainer").classList.remove("submitHide");
 })
 
