@@ -1,7 +1,25 @@
+/* font styles
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Nova Mono', monospace;
+font-family: 'Nova Oval', cursive;
+font-family: 'Nova Cut', cursive; */
+
+.editorHide{
+    display: none;
+}
+
+.submitHide{
+    display: none;
+}
+
+.paletteHide{
+    display: none;
+}
+
 /* MOBILE SHARED CSS =======================================================> */
 
 body{
-    background-image: url("images/01.backgroundimg_invert.jpg");
+    background-image: url("../images/01.backgroundimg_invert.jpg");
     background-size: auto 100vh;
     background-repeat: no-repeat;
     position: fixed;
@@ -9,15 +27,23 @@ body{
     padding: 0;
 }
 
+.outerWrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: #cdcfed;
+    opacity: .9;
+}
+
 .navbar {
     background-color: #4c0be8;
     height: 15vh;
     width: 100vw;
-    opacity: .9;
+    opacity: .8;
     position: fixed;
-    width: 100%;
+    top: 0;
+    left: 0;
     margin: 0;
-    z-index: 1;
+    z-index: 10;
 }
 
 .menu {
@@ -42,59 +68,39 @@ li {
     vertical-align: middle;
 }
 
-img{
+#logo{
     height: 3.5rem;
     position: absolute;
     left: 1rem;
     top: 2rem;
 }
 
-.outerWrapper{
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: #cdcfed;
-    background-size: auto 100vh;
-    opacity: .8;
-}
-
-.main{
-    height: 70vh;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer{
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    justify-content: center;
-    background: #175bf4;
-    height: 10vh;
-    width: auto; 
-    margin-top: 2rem;
-}
-
-
-
-/* mobile =================================================*/
-
-.hide{
-    visibility: hidden;
-}
-
 .title{
     height: 20;
     text-align: center;
     vertical-align: middle;
-    margin-top: 4rem;
+    padding-top: 8rem;
     font-family: 'Nova Oval', cursive;
     font-size: 2rem;
     color: white;
 }
+ 
+.footer{
+    background: #175bf4;
+    height: 8vh;
+    width: 100vw;
+    opacity: .8;
+    position: fixed;
+    top: 92vh;
+    margin: 0;
+    z-index: 10;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* mobile =================================================*/
 
 .swatchContainer{
     height: 80;
@@ -102,8 +108,8 @@ img{
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
-    margin-top: 5rem;
-    padding-top: 1rem;
+    padding-top: .5rem;
+    margin-bottom: 1rem;
 }
 
 .swatch{
@@ -116,106 +122,125 @@ img{
     border-radius: 50%;
 }
 
-.moodBoards{
-    padding-top: 1.5rem;
-    font-family: 'Nova Oval', cursive;
-    font-size: 1rem;
-    color: white;
-    margin-right: 3rem;
+.swatchHidden{
+    display: none;
 }
 
-.nextPage{
-    padding-top: 1.5rem;
-    font-family: 'Nova Oval', cursive;
-    font-size: 1rem;
-    color: white;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-a{
-    text-decoration: none;
-}
 
 /* mood editor CSS ==============================================> */
-.title{
-    height: 20;
-    text-align: center;
-    vertical-align: middle;
-    margin-top: 1.5rem;
-    font-family: 'Nova Oval', cursive;
-    font-size: 2rem;
-    color: white;
+
+.editorContainer{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.editorBody{
-    margin-top: 1rem;
-    height: 30vh;
-    width: 100vw;
+.paletteContainer{
+    width: 100 vw;
+    height: auto;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.palette{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.buttonContainer{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 button{
     font-family: 'Nova Oval', cursive;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #4c0be8; 
-    text-align: left;
-    align-self: flex-start;
-    margin-left: 1rem;
+    background: #b3f417;
+    outline: none;
+    margin: .5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
-.userPalette{
-    height: 10rem;
-    width: 10rem;
-    background: grey;
-    border-radius: 50%;
+#save{
+    font-family: 'Nova Oval', cursive;
+    font-size: 1.5rem;
+    color: white;
+    background: #4c0be8;
+    outline: none;
+    margin-top: 1rem;
+    margin: .5rem;
 }
 
 .colorInfo{
     font-family: 'Nova Oval', cursive;
     font-size: .8rem;
     color: #4c0be8; 
-    text-align: center;
-    align-self: center;
     margin: 2rem;
 }
 
-.inputs{
-    height: 10vh;
+.editorHidden2{
+    display: none;
+}
+
+/* mood editor–text inputs CSS ===================================> */
+
+.submitContainer{
     width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/* .wordAssoc{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    font-family: 'Nova Oval', cursive;
+    font-size: 1rem;
+    color: #4c0be8; 
+    text-align: center;
+} */
+
+.inputs{
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.mood{
-    font-family: 'Nova Oval', cursive;
-    font-size: 1.5rem;
-    color: #4c0be8; 
-    appearance: none;
-}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
 
-.notes{
-    font-family: 'Nova Oval', cursive;
-    font-size: 1.5rem;
-    color: #4c0be8; 
-    overflow: hidden;
-}
-
-.saveButton{
-    padding-top: 1.5rem;
+.form{
+    width: 50%;
+    height: auto;
     font-family: 'Nova Oval', cursive;
     font-size: 1rem;
-    color: white;
-}
-
-a{
-    text-decoration: none;
+    color: #4c0be8;
+    margin: 0 auto;
 }
 
 /*tablet portrait==========================================*/

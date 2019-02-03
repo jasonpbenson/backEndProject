@@ -114,8 +114,11 @@ class Color{
             paletteToChange.setCool(this.cool);
             paletteToChange.setWarm(this.warm);
             paletteToChange.setOriginalColor(this.hue);
-            paeletteToChange.setName(this.name)
+            paletteToChange.setName(this.name)
             document.querySelector('.swatchContainer').classList.add('hidden')
+            document.querySelector(".swatchContainer").classList.add("swatchHidden");
+            document.querySelector(".editorContainer").classList.remove("editorHide");
+            document.querySelector(".paletteContainer").classList.remove("paletteHide");
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
@@ -180,5 +183,7 @@ resetButton.addEventListener('click', (event) => {
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
+    document.querySelector(".editorContainer").classList.add("editorHidden2");
+    document.querySelector(".submitContainer").classList.remove("submitHide");
 })
 
