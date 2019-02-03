@@ -11,39 +11,42 @@ connection.connect();
 
 var expressSession = require('express-session');
 
+const apiBaseUrl = `https://api.datamuse.com/words?ml=`;
+
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
     if (req.query.msg == 'regSuccess') {
-      let msg;
+      let msg = "";
       msg = "You're all signed up! Please log in.";
       console.log(msg)
     } else if (req.query.msg == 'loginSuccess') {
       msg = "You're logged in."
     }
-    res.render('index')
+    res.render('index', {msg})
   }
 });
 
 router.get('/splash', (req, res, next) => {
-  let msg;
+  let msg = "";
   if (req.query.msg == 'mustLogIn') {
     msg = "Please log in or register."
     console.log(msg)
   }
-  res.render('splash')
+  res.render('splash', {msg})
 })
 
 router.get("/login", (req, res, next) => {
-  let msg;
+  let msg = "";
   if(req.query.msg == 'noUser'){
-      msg = '<h2 class="unregisteredEmail">This email is not registered in our system. Please try again or register!</h2>'
+      msg = 'This email is not registered in our system. Please try again or register!'
   }else if(req.query.msg == 'badPass'){
-      msg = '<h2 class="badPassword">This password is not associated with this email. Please enter again</h2>'
+      msg = 'This password is not associated with this email. Please enter again.'
   }
-res.render('login',{msg});
+  res.render('login',{msg});
 });
 
 router.post('/loginProcess',(req, res, next)=>{
@@ -72,7 +75,7 @@ router.post('/loginProcess',(req, res, next)=>{
 });
 
 router.get("/register", (req, res, next) => {
-  let msg;
+  let msg = "";
   if (req.query.mes == 'registered') {
     msg = 'This email address is already registered.'
   }
