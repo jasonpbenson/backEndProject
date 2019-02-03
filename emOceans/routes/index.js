@@ -12,13 +12,13 @@ connection.connect();
 var expressSession = require('express-session');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
-    let msg;
     if (req.query.msg == 'regSuccess') {
-      msg = "You're all signed up! Click on a color below that resemebles you you've felt today, add a mood, a note, if you like, and click save!";
+      let msg;
+      msg = "You're all signed up! Please log in.";
       console.log(msg)
     } else if (req.query.msg == 'loginSuccess') {
       msg = "You're logged in."
@@ -28,6 +28,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/splash', (req, res, next) => {
+  let msg;
+  if (req.query.msg == 'mustLogIn') {
+    msg = "Please log in or register."
+    console.log(msg)
+  }
   res.render('splash')
 })
 
@@ -72,7 +77,7 @@ router.get("/register", (req, res, next) => {
     msg = 'This email address is already registered.'
   }
   res.render("register", {
-    msg
+    msg : "Please register."
   });
 })
  
@@ -118,16 +123,19 @@ router.post("/addMood", (req, res, next) => {
     } else { 
 
       res.json(req.body)
-      // res.redirect('myAccount')
+      //res.redirect('moodBoards')
     }
   })
-//   res.json(req.body)
 })
-//above function will also res.redirect to /moodBoards when it's working!
+
 
 router.get("/moodBoards", (req, res, next) => {
-  res.render("create");
+  res.render("moodBoards");
 })
+
+router.get("/about"), (req, res, next) => {
+
+}
 
 
 router.get('/logout', (req, res, next) => {
