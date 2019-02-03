@@ -6,6 +6,7 @@ class Palette{
         this.originalColor = hue;
         this.warm = null;
         this.cool = null;
+        this.name = null;
         this.element = document.querySelector('.palette')
         this.updateElement();
         this.resetElement();
@@ -22,6 +23,10 @@ class Palette{
 
     setCool(cool) {
         this.cool = cool;
+    }
+
+    setName(name) {
+        this.name = name;
     }
 
     setOriginalColor(hue){
@@ -95,7 +100,8 @@ let colorPalette = new Palette('#FFFFFF')
 // Color as class ======================================================================>
 
 class Color{
-    constructor(hue, warm, cool, paletteToChange) {
+    constructor(name, hue, warm, cool, paletteToChange) {
+        this.name = name;
         this.hue = hue;
         this.warm = warm;
         this.cool = cool;
@@ -108,6 +114,7 @@ class Color{
             paletteToChange.setCool(this.cool);
             paletteToChange.setWarm(this.warm);
             paletteToChange.setOriginalColor(this.hue);
+            paeletteToChange.setName(this.name)
             document.querySelector('.swatchContainer').classList.add('hidden')
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
@@ -122,18 +129,18 @@ class Color{
 // These aren't final, we need to tweak color codes for hue esp, but also warm/cool,
 // and adjust the ratio for .mix() to slow down the warming/cooling process
 
-let reds = new Color('rgb(220, 20, 60)', 'rgb(139, 69, 19)', 'rgb(102, 51, 153)', colorPalette)
-let oranges = new Color('rgb(255, 128, 0)', 'brown', 'blue', colorPalette)
-let yellows = new Color('rgb(255, 215, 0)', 'orange', 'green', colorPalette)
-let greens = new Color('rgb(0, 128, 0)', 'yellow', 'blue', colorPalette)
-let turquoises = new Color('rgb(0, 139, 139)', 'yellow', 'blue', colorPalette)
-let blues = new Color('rgb(0, 0, 255)', 'rebeccapurple', 'navy', colorPalette)
-let purples = new Color('rgb(102, 51, 153)', 'red', 'blue', colorPalette)
-let magentas = new Color('rgb(218, 112, 214)', 'red', 'blue', colorPalette)
-let browns = new Color('rgb(139, 69, 19)', 'red', 'blue', colorPalette)
-let whites = new Color('rgb(255, 255, 255)', 'burlywood', 'aliceblue', colorPalette)
-let grays = new Color('rgb(169, 169, 169)', 'palevioletred', 'lightskyblue', colorPalette)
-let blacks = new Color('rgb(0, 0, 0)', 'red', 'blue', colorPalette)
+let reds = new Color('red','rgb(220, 20, 60)', 'rgb(139, 69, 19)', 'rgb(102, 51, 153)', colorPalette)
+let oranges = new Color('orange', 'rgb(255, 128, 0)', 'brown', 'blue', colorPalette)
+let yellows = new Color('yellow', 'rgb(255, 215, 0)', 'orange', 'green', colorPalette)
+let greens = new Color('green', 'rgb(0, 128, 0)', 'yellow', 'blue', colorPalette)
+let turquoises = new Color('turquoise', 'rgb(0, 139, 139)', 'yellow', 'blue', colorPalette)
+let blues = new Color('blue', 'rgb(0, 0, 255)', 'rebeccapurple', 'navy', colorPalette)
+let purples = new Color('purple', 'rgb(102, 51, 153)', 'red', 'blue', colorPalette)
+let magentas = new Color('magaenta','rgb(218, 112, 214)', 'red', 'blue', colorPalette)
+let browns = new Color('brown', 'rgb(139, 69, 19)', 'red', 'blue', colorPalette)
+let whites = new Color('white', 'rgb(255, 255, 255)', 'burlywood', 'aliceblue', colorPalette)
+let grays = new Color('gray', 'rgb(169, 169, 169)', 'palevioletred', 'lightskyblue', colorPalette)
+let blacks = new Color('black', 'rgb(0, 0, 0)', 'red', 'blue', colorPalette)
 
 // Event listeners for color adjust buttons ============================================>
 // Work on putting into for loop!
