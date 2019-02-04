@@ -16,6 +16,7 @@ body{
     line-height:1.5;
     color: purple;
     overflow-x:hidden;
+
     
     /* margin: 0;
     width: 100%;
@@ -34,20 +35,23 @@ body{
     margin: 0 auto;
 }
 
+.container{
+    max-width: 800px;
+    margin: auto;
+    /* padding-left: 1rem;             removed */
+    /* padding-right: 1rem;            removed */
+    /* text-align: center;             removed; don't see this does anything */
+}
+
+
+
 .v-header{
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;       /* added this row */
     color: white;
     
-}
-
-.container{
-    max-width: 800px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: auto;
-    text-align: center;
 }
 
 .fullscreen-video-wrap{
@@ -91,8 +95,18 @@ body{
     font-size: 1.5rem;
     display: block;
     padding-bottom: 2rem;
+}
+
+form label{
+    display: block;
     
 }
+/* 
+form input{
+    currently working on getting the text boxes by each other.
+   
+} */
+
 
 .btn{
     
@@ -101,5 +115,6 @@ body{
     font-size: 1rem;
     padding: 1rem 2rem;
     text-decoration: none;
+    border-radius: 6px;
 }
 

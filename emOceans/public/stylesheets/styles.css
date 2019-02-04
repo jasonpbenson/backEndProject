@@ -1,5 +1,7 @@
 /* font styles
 font-family: 'Rajdhani', sans-serif;
+font-family: 'Nova Slim', cursive;
+font-family: 'Nova Round', cursive;
 font-family: 'Nova Mono', monospace;
 font-family: 'Nova Oval', cursive;
 font-family: 'Nova Cut', cursive; */
@@ -109,7 +111,7 @@ a{
     flex-flow: wrap;
     justify-content: space-around;
     padding-top: .5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .swatch{
@@ -165,23 +167,24 @@ a{
 }
 
 button{
-    font-family: 'Nova Oval', cursive;
+    font-family: 'Nova Round', cursive;
     font-size: 1.5rem;
     color: #4c0be8; 
     background: #b3f417;
     outline: none;
+    border: none;
+    border-radius: 12px;
     margin: .5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 #save{
-    font-family: 'Nova Oval', cursive;
+    font-family: 'Nova Round', cursive;
     font-size: 1.5rem;
     color: white;
     background: #4c0be8;
     outline: none;
-    margin-top: 1rem;
     margin: .5rem;
+    margin-top: 1.2rem;
 }
 
 .colorInfo{
@@ -229,18 +232,38 @@ button{
 
 input[type=text] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 15px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-family: 'Nova Slim', cursive;
+    color: white;
+    background: #4c0be8;
+    opacity: .5;
+    overflow: hidden;
+  }
+
+  input[type=date] {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Nova Slim', cursive;
+    color: white;
+    background: #4c0be8;
+    opacity: .5;
   }
 
 .form{
-    width: 50%;
+    width: 100%;
     height: auto;
     font-family: 'Nova Oval', cursive;
     font-size: 1rem;
     color: #4c0be8;
     margin: 0 auto;
+}
+
+.submitButton{
+    align-self: flex-end;
 }
 
 /*tablet portrait==========================================*/

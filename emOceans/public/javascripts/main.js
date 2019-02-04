@@ -180,5 +180,6 @@ saveButton.addEventListener('click', (event) => {
     formColor.value = savedColor
     document.querySelector(".editorContainer").classList.add("editorHidden2");
     document.querySelector(".submitContainer").classList.remove("submitHide");
+    document.querySelector("#today").valueAsDate = new Date();
 })
 
