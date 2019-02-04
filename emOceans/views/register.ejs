@@ -20,29 +20,22 @@
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
+                <h1>Register</h1>
             <h4>
                 <%= msg %>
             </h4>
-            <h1>Register</h1>
-            <form class="form" id="form" action="/registerProcess" method="post">
-<<<<<<< HEAD
+            
+            <form class="form form-container-reg" id="form" action="/registerProcess" method="post">
                 <label for="firstName">First Name</label> <input type="text" id="firstName" name="firstName" required>
                 <label for="lastName">Last Name</label> <input type="text" id="lastName" name="lastName" required>
                 <label for="userName">Email</label> <input type="text" id="email" name="email"required>
                 <label for="password">Password</label> <input type="password" id="password" name="password"required>
-=======
-
-                <label for="firstName">First Name</label> <input type="text" id="firstName" name="firstName">
-                <label for="lastName">Last Name</label> <input type="text" id="lastName" name="lastName">
-                <label for="userName">Email</label> <input type="text" id="email" name="email">
-                <label for="password">Password</label> <input type="text" id="password" name="password">
->>>>>>> a0dd979cf043efd44182449f052200de092f1e91
                 <label for="phone">Phone</label><input type="text" id="phone" name="phone">
-
-                <div class="button">
-                <button type="submit">Register</button>
+                <div class="tester">
+                <button type="submit" class="targBox">Register</button>
                 </div>
             </form>
+            
         </div>
     </header>
 

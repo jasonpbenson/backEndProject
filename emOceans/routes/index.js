@@ -44,7 +44,7 @@ router.get("/login", (req, res, next) => {
   if(req.query.msg == 'noUser'){  //if query parameters, after the ? mark;
       msg = '<h2 class="unregisteredEmail">This email is not registered in our system. Please try again or register!</h2>'
   }else if(req.query.msg == 'badPass'){
-      msg = 'This password is not associated with this email. Please enter again.'
+      msg = '<h2 class="badPassword">This password is not associated with this email. Please enter again.</h2>'
   }
   // console.log(msg); we are receiving message in console.
 res.render('login',{msg});
@@ -82,7 +82,7 @@ router.get("/register", (req, res, next) => {
   } else if (req.query.msg == 'password6chars') {
     msg = 'Your password must be at last 6 characters.'
   } else {
-    msg = 'Please register.'
+    // msg = 'Please register.'
   }
   res.render("register", {
     msg
