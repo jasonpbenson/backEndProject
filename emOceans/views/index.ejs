@@ -34,26 +34,35 @@
         <div class="submitContainer submitHide">
                 <div class="textContainer">
                     <div class="dataMuse">
-                    <h3>Need help finding the right word for how you feel?</h3>
-                    <p> we will code this form and text box later</p>
+                    <h3>Can't find the right word for how you feel?</h3>
+                    <div class="word-search">
+                        <form id="word-form">
+                            <input id="word-search-input" type="text" placeholder="Sad" />
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="word-info-box">
+                    </div>
                 </div>  
             </div> -->
             <div class="inputs">
                 <form class="form" id="moodForm" action="/addMood" method="post">
-                    <label for="mood">Mood:</label> <input type="text" placeholder="in a word..." id="mood" name="newMood">
-                    <label for="colorChoice"></label> <input type="hidden" id="colorChoice" name="newColor">
+                    <label for="mood">Mood:</label> <input type="text" placeholder="in a word..." id="mood" name="newMood" required>
+                    <label for="colorChoice"></label> <input type="hidden" id="colorChoice" name="newColor" required>
                     <label for="note">Add Note:</label> <input type="text" placeholder="in a few words..." id="note" name="newNote">
-                    <label for="date">Date:</label> <input type="date" id="date" name="newDate">
+                    <label for="date">Date:</label> <input type="date" id="date" name="newDate" required>
+                    <div class="submitButton">
+                        <button type="submit">Submit</button>
+                    </div>
                 </form>
-                <div class="submitButton">
-                    <button type="submit">Submit</button>
-                </div>
+                
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
     <script src="/javascripts/varDec.js"></script>
+    <script src="/javascripts/datamuse.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/colorWords.js"></script>
 </body>

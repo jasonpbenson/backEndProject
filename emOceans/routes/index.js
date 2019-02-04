@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
       let msg = "";
       msg = "You're all signed up! Please log in.";
       console.log(msg)
-    } else if (req.query.msg == 'loginSuccess') {
+    } else if (req.query.msg == 'hello') {
       msg = "You're logged in."
     }
     res.render('index', {msg})
@@ -68,7 +68,7 @@ router.post('/loginProcess',(req, res, next)=>{
               req.session.email = results[0].email;
               req.session.uid = results[0].id
               req.session.loggedIn = true;
-              res.redirect('/?msg=loginSuccess');
+              res.redirect('/?msg=hello');
           };
       };
   });
@@ -110,13 +110,17 @@ router.get("/create", (req, res, next) => {
   res.render("create");
 })
 
+// router.post('/wordSearch', (req, res, next) => {
+  
+// })
+
 router.post("/addMood", (req, res, next) => {
   const newMood = req.body.newMood;
   const newColor = req.body.newColor;
   const newNote = req.body.newNote;
   const newDate = req.body.newDate;
   const userId = req.session.uid;
-  console.log(userId)
+  console.log(userId, "hi")
   const insertQuery = `INSERT INTO moodData(id, mood, color, note, date, uid)
     VALUES
     (DEFAULT, ?, ?, ?, ?, ?);`
@@ -124,6 +128,7 @@ router.post("/addMood", (req, res, next) => {
     if (err) {
       throw err;
     } else { 
+      console.log("whereami?")
 
       res.json(req.body)
       //res.redirect('moodBoards')
@@ -142,7 +147,6 @@ router.get("/about"), (req, res, next) => {
 
 
 router.get('/logout', (req, res, next) => {
-  // delete all session variables for this user
   req.session.destroy();
   res.redirect('/login?msg=loggedOut')
 })

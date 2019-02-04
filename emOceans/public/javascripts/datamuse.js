@@ -1,4 +1,3 @@
-// What can we do with the datamuse API?
 const apiBaseUrl = `https://api.datamuse.com/words?ml=`
 //add functionality for picking an ocean work to be combined with the
 //word they input (calm, stormy, deep, cold, warm, etc...) will go into the url at somepoint
@@ -29,26 +28,3 @@ $('#word-form').submit((event) => {
         $('.word-info-box').html(newHTML)
     })
 })
-
-
-
-
-
-
-// let rgbToHex = function (rgb) {
-//     let hex = Number(rgb).toString(16);
-//     if (hex.length < 2) {
-//         hex = "0" + hex;
-//     }
-//     return hex;
-// };
-
-// let fullColorHex = function (r, g, b) {
-//     let red = rgbToHex(r);
-//     let green = rgbToHex(g);
-//     let blue = rgbToHex(b);
-//     return red + green + blue;
-// };
-
-// console.log(fullColorHex(220, 20, 60))
-
