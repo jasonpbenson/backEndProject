@@ -183,5 +183,3 @@ saveButton.addEventListener('click', (event) => {
     document.querySelector("#today").valueAsDate = new Date();
 })
 
-// Clicks for class adding and removing
-

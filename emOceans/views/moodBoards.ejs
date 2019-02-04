@@ -21,41 +21,15 @@
                 <button class="boardButton viewYear">Year</button>
             </div>
             <div class="boardDisplay">
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
-                <div class="moodSwatch"></div>
+                <div class='circles'></div>
+               <% for (let i =0; i < results.length; i++) { %>
+                    <div class='circle'>
+                        <%= results[i].color %>
+                        <%= results[i].mood %>
+                        <%= results[i].note %>
+                        <%= results[i].date %>
+                    </div>
+               <% } %>
             </div>
         </div>
     </div>
