@@ -179,6 +179,7 @@ saveButton.addEventListener('click', (event) => {
     formColor.value = savedColor
     document.querySelector('.swatchContainer').style.display = 'none';
     document.querySelector(".editorContainer").style.display = 'none'
+    document.querySelector(".textContainer").style.display = 'flex';
     document.querySelector(".submitContainer").style.display = 'flex';
     document.querySelector("#today").valueAsDate = new Date();
 })
