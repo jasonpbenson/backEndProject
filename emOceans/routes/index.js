@@ -131,8 +131,8 @@ router.post("/addMood", (req, res, next) => {
       console.log("whereami?")
 
       res.json(req.body)
-      //res.redirect('moodBoards')
-    }
+      res.redirect("/?msg=moodBoardAdded")
+
   })
 })
 
