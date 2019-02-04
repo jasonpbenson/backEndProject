@@ -20,6 +20,7 @@ body{
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .outerWrapper{
@@ -257,6 +258,49 @@ input[type=text] {
 
 .submitButton{
     align-self: flex-end;
+}
+
+/* mobile mood boards================================================= */
+
+.boardWrapper{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.moodBoardButtonContainer{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardButton{
+    font-family: 'Nova Round', cursive;
+    font-size: 1.5rem;
+    color: #4c0be8; 
+    background: #b3f417;
+    width: 8rem;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    margin: .5rem;
+}
+
+.boardDisplay{
+    overflow: scroll;
+    background: lightslategray;
+    height: 20rem;
+    width: 20rem;
+    margin-top: 2rem;
+    border-radius: 12px;
 }
 
 /*tablet portrait==========================================*/
