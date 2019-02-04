@@ -5,7 +5,7 @@ const config = require('../config');
 
 var bcrypt = require('bcrypt-nodejs');
 
-var mysql = require('mysql');
+var mysql = require('mysql'); 
 let connection = mysql.createConnection(config.db);
 connection.connect();
 
@@ -38,22 +38,23 @@ router.get('/splash', (req, res, next) => {
 
 router.get("/login", (req, res, next) => {
   let msg;
-  if(req.query.msg == 'noUser'){
+  if(req.query.msg == 'noUser'){  //if query parameters, after the ? mark;
       msg = '<h2 class="unregisteredEmail">This email is not registered in our system. Please try again or register!</h2>'
   }else if(req.query.msg == 'badPass'){
       msg = '<h2 class="badPassword">This password is not associated with this email. Please enter again</h2>'
   }
+  // console.log(msg); we are receiving message in console.
 res.render('login',{msg});
 });
 
 router.post('/loginProcess',(req, res, next)=>{
   const email =  req.body.email;
   const password = req.body.password;
-  const checkPasswordQuery = `SELECT * FROM users WHERE email = ?`;
+  const checkPasswordQuery = `SELECT * FROM users WHERE email = ?`;//will tell on next line
   connection.query(checkPasswordQuery,[email],(error, results)=>{
       if(error){throw error;}
       if(results.length == 0 ){
-          res.redirect('/?msg=noUser');
+          res.redirect('/login?msg=noUser');
       }else{
           const passwordsMatch = bcrypt.compareSync(password,results[0].hash);
           if(!passwordsMatch){
@@ -133,9 +134,9 @@ router.get("/moodBoards", (req, res, next) => {
   res.render("moodBoards");
 })
 
-router.get("/about"), (req, res, next) => {
-
-}
+router.get("/about", (req, res, next) => {
+  res.render("about");
+})
 
 
 router.get('/logout', (req, res, next) => {

@@ -84,6 +84,14 @@ body{
     text-align: center;
 }
 
+.unregisteredEmail, .badPassword{
+    font-size: 1rem  !important;
+    color: red;
+    padding-bottom: 2em;
+}
+
+
+
 .header-content h2{
     font-size: 50px;
     margin-bottom: 0;
