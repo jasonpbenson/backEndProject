@@ -107,7 +107,7 @@ class Color{
             paletteToChange.setWarm(this.warm);
             paletteToChange.setOriginalColor(this.hue);
             paletteToChange.setName(this.name)
-            document.querySelector(".buttonContainer").style.display = 'flex';
+            document.querySelector(".editorContainer").style.display = 'flex';
             document.querySelector(".paletteContainer").style.display = 'flex';
             document.querySelector(".swatchContainer").classList.add('mobileHide');
         })
@@ -178,8 +178,8 @@ saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
     document.querySelector('.swatchContainer').style.display = 'none';
-    document.querySelector(".buttonContainer").style.display = 'none'
+    document.querySelector(".editorContainer").style.display = 'none'
     document.querySelector(".submitContainer").style.display = 'flex';
-    document.querySelector(".textContainer").style.display = 'flex';
     document.querySelector("#today").valueAsDate = new Date();
 })
+
