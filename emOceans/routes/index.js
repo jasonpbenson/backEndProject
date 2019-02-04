@@ -128,7 +128,6 @@ router.post("/addMood", (req, res, next) => {
   const newNote = req.body.newNote;
   const newDate = req.body.newDate;
   const userId = req.session.uid;
-  console.log(userId, "hi")
   const insertQuery = `INSERT INTO moodData(id, mood, color, note, date, uid)
     VALUES
     (DEFAULT, ?, ?, ?, ?, ?);`
@@ -136,17 +135,28 @@ router.post("/addMood", (req, res, next) => {
     if (err) {
       throw err;
     } else { 
-      console.log("whereami?")
+      console.log("whereami?") 
 
-      res.json(req.body)
+      res.redirect('moodBoards')
     }
   })
 })
 
 
 router.get("/moodBoards", (req, res, next) => {
-  res.render("moodBoards");
+  const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE uid = ?
+    ORDER BY date`;
+  connection.query(selectQuery, [req.session.uid], (err, results) => {
+    if(err) {
+      throw err
+    } else {
+      res.render('moodboards', {results})
+    }
+
+  })
 })
+
 
 router.get("/about", (req, res, next) => {
   res.render("about");

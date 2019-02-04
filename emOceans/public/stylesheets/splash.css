@@ -105,75 +105,16 @@ body{
     padding-bottom: 2rem;
 }
 
-
 form label{
-   /* flex-grow: 1; */
-   flex-basis: 50%;
-   text-align: left;
+    display: block;
     
 }
-.form-container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 26rem;
-    justify-content: space-between;
-    align-items: center;
-}
-.form-container-reg{
-    display: flex;
-    flex-wrap: wrap;
-    width: 26rem;
-    justify-content: space-between;
-    align-items: center;
-}
-
+/* 
 form input{
-    flex-basis: 35%;
-    flex-grow: 1;
-    height: 2em;
-} 
+    currently working on getting the text boxes by each other.
+   
+} */
 
-.form-login label{
-    text-align: right;
-    margin-right: 10px;
-}
-/* button on Register */
-.targBox{   
-    display: flex;
-    background: teal;
-    border-radius: 6px;
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    justify-content: flex-end;
-    /* margin: 0 auto; */
-    /* align-self: center; */
-}
-
-.tester{
-    /* display: flex;
-    justify-content: center; */
-    /* align-self: center; */
-    margin:10px auto;
-}
-.targBoxlogin{
-    display: flex;
-    background: teal;
-    border-radius: 6px;
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    justify-content: flex-end;
-    float: right;
-}
-.tester-1{
-    /* display: flex;
-    justify-content: center; */
-    /* align-self: center; */
-    /* margin:10px auto; */
-    width: 100%;
-    padding: 10px;
-}
 
 .btn{
     
@@ -184,4 +125,3 @@ form input{
     text-decoration: none;
     border-radius: 6px;
 }
-
