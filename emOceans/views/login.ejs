@@ -20,16 +20,14 @@
         </div>
         <div class="header-overlay"></div>
         <div class="header-content">
-            <h4>
-                <%= msg %>
-            </h4>
+        
             <h1>User Login</h1>
             <%-msg%>
-            <form class="form" id="form" action="/loginProcess" method="post">
+            <form class="form form-container form-login" id="form" action="/loginProcess" method="post">
                 <label for="email">Email:</label> <input type="text" id="email" name="email" required>
                 <label for="password">Password:</label> <input type="password" id="password" name="password" required>                
-                <div class="button">
-                    <button type="submit">Login</button>
+                <div class="tester-1">
+                <button type="submit" class="targBoxlogin">Login</button>
                 </div>
             </form>
         </div>
