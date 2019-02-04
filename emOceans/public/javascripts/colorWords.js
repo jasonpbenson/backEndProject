@@ -43,17 +43,17 @@ const colors = [
     },
 
     {
-        gray: [`Neutrality, timeless, practical, boredom.`]
+        gray: [`Neutrality, timelessness, practicality, boredom.`]
     },
     
     {
-        black: [`authority, power, strength, evil, intelligence, death, mourning, night,
-        darkness, space`]
+        black: [`Authority, power, strength, evil, intelligence, death, mourning, night,
+        darkness, space, depth.`]
     },
 
     {
-        brown: [`groundedness, reliability, earthy, friendship, warmth, comfort, security
-        natural, organic`]
+        brown: [`Groundedness, reliability, earthy, friendship, warmth, comfort, security
+        natural, organic.`]
     }
    
 ]

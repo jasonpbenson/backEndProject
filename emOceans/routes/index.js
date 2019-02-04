@@ -76,14 +76,19 @@ router.post('/loginProcess',(req, res, next)=>{
 
 router.get("/register", (req, res, next) => {
   let msg = "";
-  if (req.query.mes == 'registered') {
-    msg = 'This email address is already registered.'
+  if (req.query.msg == 'registered') {
+    msg = 'This email address is already registered. Please <a href="/login">log in</a>.'
+  } else if (req.query.msg == 'password6chars') {
+    msg = 'Your password must be at last 6 characters.'
+  } else {
+    msg = 'Please register.'
   }
   res.render("register", {
-    msg : "Please register."
+    msg
   });
 })
  
+const passwordRegex = new RegExp("^.{6,}$");
 // registerProcess
 router.post('/registerProcess', (req, res, next) => {
   const hashedPass = bcrypt.hashSync(req.body.password);
@@ -93,6 +98,8 @@ router.post('/registerProcess', (req, res, next) => {
     console.log("results",results);
     if (results.length != 0) {
       res.redirect('/register?msg=registered')
+    }else if(!passwordRegex.test(req.body.password)) {
+      res.redirect('/register?msg=password6chars')
     }else{
       const insertQuery = `INSERT INTO users (firstName, lastName, email, hash, phone)
       VALUES 
