@@ -11,29 +11,32 @@ connection.connect();
 
 var expressSession = require('express-session');
 
+const apiBaseUrl = `https://api.datamuse.com/words?ml=`;
+
+
 /* GET home page. */
 router.get('/', (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
     if (req.query.msg == 'regSuccess') {
-      let msg;
+      let msg = "";
       msg = "You're all signed up! Please log in.";
       console.log(msg)
-    } else if (req.query.msg == 'loginSuccess') {
+    } else if (req.query.msg == 'hello') {
       msg = "You're logged in."
     }
-    res.render('index')
+    res.render('index', {msg})
   }
 });
 
 router.get('/splash', (req, res, next) => {
-  let msg;
+  let msg = "";
   if (req.query.msg == 'mustLogIn') {
     msg = "Please log in or register."
     console.log(msg)
   }
-  res.render('splash')
+  res.render('splash', {msg})
 })
 
 router.get("/login", (req, res, next) => {
@@ -41,7 +44,7 @@ router.get("/login", (req, res, next) => {
   if(req.query.msg == 'noUser'){  //if query parameters, after the ? mark;
       msg = '<h2 class="unregisteredEmail">This email is not registered in our system. Please try again or register!</h2>'
   }else if(req.query.msg == 'badPass'){
-      msg = '<h2 class="badPassword">This password is not associated with this email. Please enter again</h2>'
+      msg = 'This password is not associated with this email. Please enter again.'
   }
   // console.log(msg); we are receiving message in console.
 res.render('login',{msg});
@@ -66,22 +69,27 @@ router.post('/loginProcess',(req, res, next)=>{
               req.session.email = results[0].email;
               req.session.uid = results[0].id
               req.session.loggedIn = true;
-              res.redirect('/?msg=loginSuccess');
+              res.redirect('/?msg=hello');
           };
       };
   });
 });
 
 router.get("/register", (req, res, next) => {
-  let msg;
-  if (req.query.mes == 'registered') {
-    msg = 'This email address is already registered.'
+  let msg = "";
+  if (req.query.msg == 'registered') {
+    msg = 'This email address is already registered. Please <a href="/login">log in</a>.'
+  } else if (req.query.msg == 'password6chars') {
+    msg = 'Your password must be at last 6 characters.'
+  } else {
+    msg = 'Please register.'
   }
   res.render("register", {
-    msg : "Please register."
+    msg
   });
 })
  
+const passwordRegex = new RegExp("^.{6,}$");
 // registerProcess
 router.post('/registerProcess', (req, res, next) => {
   const hashedPass = bcrypt.hashSync(req.body.password);
@@ -91,6 +99,8 @@ router.post('/registerProcess', (req, res, next) => {
     console.log("results",results);
     if (results.length != 0) {
       res.redirect('/register?msg=registered')
+    }else if(!passwordRegex.test(req.body.password)) {
+      res.redirect('/register?msg=password6chars')
     }else{
       const insertQuery = `INSERT INTO users (firstName, lastName, email, hash, phone)
       VALUES 
@@ -108,13 +118,17 @@ router.get("/create", (req, res, next) => {
   res.render("create");
 })
 
+// router.post('/wordSearch', (req, res, next) => {
+  
+// })
+
 router.post("/addMood", (req, res, next) => {
   const newMood = req.body.newMood;
   const newColor = req.body.newColor;
   const newNote = req.body.newNote;
   const newDate = req.body.newDate;
   const userId = req.session.uid;
-  console.log(userId)
+  console.log(userId, "hi")
   const insertQuery = `INSERT INTO moodData(id, mood, color, note, date, uid)
     VALUES
     (DEFAULT, ?, ?, ?, ?, ?);`
@@ -122,9 +136,10 @@ router.post("/addMood", (req, res, next) => {
     if (err) {
       throw err;
     } else { 
+      console.log("whereami?")
 
       res.json(req.body)
-      //res.redirect('moodBoards')
+      res.redirect("/?msg=moodBoardAdded")
     }
   })
 })
@@ -140,7 +155,6 @@ router.get("/about", (req, res, next) => {
 
 
 router.get('/logout', (req, res, next) => {
-  // delete all session variables for this user
   req.session.destroy();
   res.redirect('/login?msg=loggedOut')
 })

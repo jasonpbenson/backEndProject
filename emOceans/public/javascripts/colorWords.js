@@ -1,58 +1,59 @@
 const colors = [
     {
-        red: [`love, romance, danger, attention, warmth, comfort, energy, excitement,
-        intensity, life, blood`]
+        red: [`Love, romance, danger, attention, warmth, comfort, energy, excitement,
+        intensity, life, blood.`]
     },
 
     {
-        pink: [`romance, love, gentle, calming, tenderness`]
+        pink: [`Romance, love, gentleness, calm, tenderness.`]
     },
 
     {
-        orange: [`happy, energetic, excitement, enthusiasm, warmth, prosperity,
-        change, stimulation, youthful`]
+        orange: [`Happiness, energy, excitement, enthusiasm, warmth, prosperity,
+        change, stimulation, youthfulness.`]
     },
 
     {
-        yellow: [`happiness, laughter, cheery, warmth, optimism, hunger, intensity,
-        sun, summer`]
+        yellow: [`Happiness, laughter, cheer, warmth, optimism, hunger, intensity,
+        sun, summer, levity.`]
     },
 
     {
-        green: [`natural, cool, growth, transformation, renewal, money, health, envy,
-        tranquility, harmony, calm, fertility`]
+        green: [`Nature, coolness, growth, transformation, renewal, money, health, envy,
+        tranquility, harmony, calm, fertility, good luck.`]
     },
 
     {
-        turqouise: []
+        turquoise: [`Femininity, sophistication, energy, wisdom, serenity, wholeness, creativity, 
+        balance, spirituality, tranquility, patience, intuition, friendship, and loyalty.`]
     },
 
     {
-        blue: [`stability, calmness, serenity, sadness, cold, uncaring, wisdom, loyalty,
-        truth, focused`]
+        blue: [`Stability, calm, serenity, sadness, cold, distance, wisdom, loyalty,
+        truth, focus.`]
     },
 
     {
-        purple: [`creativity, royalty, wealth, sophistication, wisdom, exotic, spiritual,
-                prosperity, respect, mystery`]
+        purple: [`Creativity, royalty, wealth, sophistication, wisdom, exotica, spirituality,
+                prosperity, respect, mystery.`]
     },
 
     {
-        white: [`purity, innocence, clean, sense of space, neutrality, peace, surrender, quiet`]
+        white: [`Purity, innocence, cleanliness, sense of space, neutrality, peace, surrender, quiet.`]
     },
 
     {
-        gray: [`neutral, timeless, practical, boredom`]
+        gray: [`Neutrality, timelessness, practicality, boredom.`]
     },
     
     {
-        black: [`authority, power, strength, evil, intelligence, death, mourning, night,
-        darkness, space`]
+        black: [`Authority, power, strength, evil, intelligence, death, mourning, night,
+        darkness, space, depth.`]
     },
 
     {
-        brown: [`groundedness, reliability, earthy, friendship, warmth, comfort, security
-        natural, organic`]
+        brown: [`Groundedness, reliability, earthy, friendship, warmth, comfort, security
+        natural, organic.`]
     }
    
 ]
