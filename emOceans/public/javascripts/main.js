@@ -11,36 +11,28 @@ class Palette{
         this.updateElement();
         this.resetElement();
     }
-
     setHue(hue) {
         this.hue = hue;
         this.updateElement();
     }
-
     setWarm(warm) {
         this.warm = warm;
     }
-
     setCool(cool) {
         this.cool = cool;
     }
-
     setName(name) {
         this.name = name;
     }
-
     setOriginalColor(hue){
         this.originalColor = hue;
     }
-
     updateElement() {
         this.element.style.backgroundColor = this.hue;
     }
-
     resetElement() {
         this.element.style.backgroundColor = this.originalColor;
     }
-
     lighten() {
         let total;
         if (typeof this.hue == 'object'){
@@ -51,7 +43,6 @@ class Palette{
             this.updateElement()
         }
     }
-
     darken() {
         let total;
         if (typeof this.hue == 'object') {
@@ -67,27 +58,28 @@ class Palette{
         this.updateElement()
     }
 // desat() needs logic to stop it before it's gray (r, g, b all equal)!!!!!!!!!!!!!!!!
+// i tried converting to hsl but it didn't like that... with comparing values in an RGB array
+// to see if they were the same, the decimals prevented that, and I could not floor the numbers,
+// as that froze their numbers as they were when they were floored, and could not be further manipulated
+// by chroma. HSL/HSV methods returned drastically different hues... can't use...
+// THE ONLY THING I COULD THINK OF WAS DISABLING THE BUTTON AFTER ONE CLICK AND RE-ENABLING THE BUTTON ON RESET!
     desat() {
-        this.hue = chroma(this.hue).desaturate(1)
+        this.hue = chroma(this.hue).desaturate(2)
         this.updateElement()
     }
-
     warmer() {
         this.hue = chroma.mix(this.hue, this.warm, 0.25)
         this.updateElement()
     }
-
     cooler() {
         this.hue = chroma.mix(this.hue, this.cool, 0.25)
         this.updateElement()
     }
-
     reset() {
         this.hue = this.originalColor
         this.updateElement()
-        
+        console.log(this.hue)    
     }
-
     sendToForm() {
         this.hue = formColor.value
     }
@@ -95,7 +87,7 @@ class Palette{
 
 // Palette object declaration ==========================================================>
 
-let colorPalette = new Palette('#FFFFFF')
+let colorPalette = new Palette('rbg(255, 255, 255)')
 
 // Color as class ======================================================================>
 
@@ -122,7 +114,6 @@ class Color{
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
-
     updateElement() {
         this.element.style.backgroundColor = this.hue;
     }
@@ -158,14 +149,17 @@ darkenButton.addEventListener('click', (event) => {
 
 satButton.addEventListener('click', (event) => {
     colorPalette.sat()
+    document.getElementById("desat").disabled = false;
 })
 
 desatButton.addEventListener('click', (event) => {
     colorPalette.desat()
+    document.getElementById("desat").disabled = true;
 })
 
 warmButton.addEventListener('click', (event) => {
     colorPalette.warmer()
+    
 })
 
 coolButton.addEventListener('click', (event) => {
@@ -174,6 +168,7 @@ coolButton.addEventListener('click', (event) => {
 
 resetButton.addEventListener('click', (event) => {
     colorPalette.reset()
+    document.getElementById("desat").disabled = false;
 })
 
 // JS for getting color INTO FORM to be posted ============================>
