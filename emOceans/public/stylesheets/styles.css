@@ -22,6 +22,12 @@ body{
     padding: 0;
 }
 
+/* .body-color{
+    background-color: #cdcfed;
+    opacity: 0.9;
+    background-size: cover;
+} */
+
 .outerWrapper{
     height: 100vh;
     width: 100vw;
@@ -259,6 +265,10 @@ input[type=text] {
     align-self: flex-end;
 }
 
+.textContainer {
+        display: none;
+    }
+
 /*tablet portrait==========================================*/
 @media (min-width: 640px) and (max-width: 1024px){
     
@@ -278,10 +288,19 @@ input[type=text] {
 
     body {
         background-image: url("../images/01.backgroundimg_invert.jpg");
-        background-size: 100% 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         margin: 0;
         padding: 0;
+}
+
+    .body-background{
+        background-color: #cdcfed;
+        opacity: 0.9;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        /* background-size: cover; */
 }
 
     .navbar {
@@ -310,7 +329,7 @@ input[type=text] {
 
     .title {
         font-size: 36pt;
-        margin-top: 6rem;
+        margin-top: 7rem;
         padding-top: 0rem;
         width: 100%;
         background-color: #cdcfed;
@@ -319,9 +338,11 @@ input[type=text] {
 
     .outerWrapper {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
+        height: auto;
         margin: 0 auto;
     }
 
@@ -329,7 +350,7 @@ input[type=text] {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 40%;
+        width: 400px;
         margin: 2rem 1rem;
     }
 
@@ -338,20 +359,12 @@ input[type=text] {
         height: 100px;
         width: 100px;
         border-radius: 50%;
-        margin: 5px;
-
+        margin: 5px 5px 15px 5px;
     }
 
     .mobileHide {
         display: flex;
 }
-
-    .editorContainer {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        
-    }
 
     .paletteContainer {
         display: flex;
@@ -367,10 +380,16 @@ input[type=text] {
         margin: 1rem;
     }
 
+    /* .editorContainer {
+        display: flex;
+        flex-direction: column;
+    } */
+
     .buttonContainer {
         display: flex;
         flex-direction: column;
         margin: 1rem 2rem;
+        width: 200px;
     }
 
     button {
@@ -386,13 +405,8 @@ input[type=text] {
         flex-direction: column;
         align-items: space-evenly;
         justify-content: center;
-
     }
 
-    .wordAssoc {
-        width: 40%;
-        margin: 0;
-    }
 
 
     form {
@@ -419,4 +433,13 @@ input[type=text] {
         font-family: inherit;
         font-size: 14px;
     }
+
+    .textContainer {
+        display: none;
+    }
+}
+
+/* Desktop ================================================*/
+@media (min-width: 1400px) {
+
 }

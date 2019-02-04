@@ -6,8 +6,7 @@ const apiBaseUrl = `https://api.datamuse.com/words?ml=`
 $('#word-form').submit((event) => {
     //stops the browser from going forward
     event.preventDefault();
-    let wordSearch = 'happy';
-    wordSearch = $('#search-input').val()
+    let wordSearch = $('#search-input').val()
     const wordSearchUrl = `${apiBaseUrl}${wordSearch}&max=15`
     let newHTML = '';
     $.getJSON(wordSearchUrl, (wordInfo) => {
