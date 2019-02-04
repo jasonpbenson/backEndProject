@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Muli|Nova+Cut|Nova+Mono|Nova+Oval|Rajdhani" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='/stylesheets/splash.css' />
+   
 
 </head>
 
@@ -23,6 +24,7 @@
                 <%= msg %>
             </h4>
             <h1>User Login</h1>
+            <%-msg%>
             <form class="form" id="form" action="/loginProcess" method="post">
                 <label for="email">Email:</label> <input type="text" id="email" name="email" required>
                 <label for="password">Password:</label> <input type="password" id="password" name="password" required>                
