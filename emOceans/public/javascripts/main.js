@@ -107,10 +107,9 @@ class Color{
             paletteToChange.setWarm(this.warm);
             paletteToChange.setOriginalColor(this.hue);
             paletteToChange.setName(this.name)
-            document.querySelector('.swatchContainer').classList.add('hidden')
-            document.querySelector(".swatchContainer").classList.add("swatchHidden");
-            document.querySelector(".editorContainer").classList.remove("editorHide");
-            document.querySelector(".paletteContainer").classList.remove("paletteHide");
+            document.querySelector(".editorContainer").style.display = 'flex';
+            document.querySelector(".paletteContainer").style.display = 'flex';
+            document.querySelector(".swatchContainer").classList.add('mobileHide');
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
@@ -178,8 +177,12 @@ resetButton.addEventListener('click', (event) => {
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
-    document.querySelector(".editorContainer").classList.add("editorHidden2");
-    document.querySelector(".submitContainer").classList.remove("submitHide");
+    document.querySelector('.swatchContainer').style.display = 'none';
+    document.querySelector(".editorContainer").style.display = 'none'
+    document.querySelector(".submitContainer").style.display = 'flex';
     document.querySelector("#today").valueAsDate = new Date();
 })
+
+// Clicks for class adding and removing
+
 
