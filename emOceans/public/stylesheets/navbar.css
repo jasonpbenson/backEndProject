@@ -3,16 +3,19 @@
   box-sizing: border-box;
 }
 
-.menu{
+.hamburgerMenu{
     /* border: 1px solid red; */
     overflow: hidden;   /*anything that goes outside this box will be hidden.*/
     height: 50px;
     width: 50px;
     z-index: 3;
     transition: 1s; /*transition to take place over 1second)*/
+    position: absolute;
+    right: 0;
+    top: 1rem;  
 }
 
-.menu.active {    /*will change on-click at later time*/
+.hamburgerMenu.active {    /*will change on-click at later time*/
    /* border: 1px solid red; */
     overflow: hidden;   /*anything that goes outside this box will be hidden.*/
     height: 100vh;
@@ -26,13 +29,13 @@
 
 
 
-.menu li{
+.hamburgerMenu li{
     display: block;
     /* display: inline-block; */
-    cursor: pointer;
+    color: #fff;
 }
 
-.menu.active li {
+.hamburgerMenu.active li {
   cursor: crosshair;
 }
 
@@ -70,7 +73,7 @@
 
   @media (min-width:510px){
   
-  .menu {
+  .hamburgerMenu {
     height: 4rem !important;
     overflow: visible;
     width: 500px;
@@ -80,7 +83,7 @@
     cursor: pointer;
   }
 
-.menu.active{
+.hamburgerMenu.active{
     overflow: hidden;   /*anything that goes outside of this (.menu/.active) will be hidden.*/
     height: 5rem;
     width: auto;
@@ -96,7 +99,7 @@ ul {
   margin: 5px;
 }
 
-.menu li {
+.hamburgerMenu li {
   display: inline-block;
 }
   }
