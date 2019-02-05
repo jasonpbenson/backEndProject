@@ -20,7 +20,7 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .body-background {
@@ -28,7 +28,7 @@ body {
     opacity: 0.9;
     width: 100%;
     height: 100vh;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .outerWrapper{
@@ -145,7 +145,7 @@ li {
     justify-content: space-around;
     align-items: center;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
 }
 
 .palette {
@@ -159,6 +159,7 @@ li {
 /* style for desktop */
 
 .editorContainer {
+
     width: 100vw;
     height: auto;
     display: none;
@@ -180,7 +181,7 @@ button {
     font-family: 'Nova Round', cursive;
     font-size: 1.5rem;
     color: #4c0be8; 
-    background: #b3f417;
+    background: rgb(215, 215, 215);
     width: 8rem;
     outline: none;
     border: none;
@@ -245,10 +246,24 @@ button {
 
 input[type=text] {
     width: 100%;
-    padding: 8px 15px;
+    padding: 4px 8px;
     margin: 8px 0;
     box-sizing: border-box;
     font-family: 'Nova Slim', cursive;
+    font-size: 1rem;
+    color: white;
+    background: #4c0be8;
+    opacity: .5;
+    overflow: hidden;
+  }
+
+  textarea{
+    width: 100%;
+    padding: 4px 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Nova Slim', cursive;
+    font-size: 1rem;
     color: white;
     background: #4c0be8;
     opacity: .5;
@@ -257,10 +272,11 @@ input[type=text] {
 
   input[type=date] {
     width: 100%;
-    padding: 8px 15px;
+    padding: 4px 8px;
     margin: 8px 0;
     box-sizing: border-box;
     font-family: 'Nova Slim', cursive;
+    font-size: 1rem;
     color: white;
     background: #4c0be8;
     opacity: .5;
@@ -270,18 +286,23 @@ input[type=text] {
     width: 100%;
     height: auto;
     font-family: 'Nova Oval', cursive;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #4c0be8;
     margin: 0 auto;
 }
 
-.submitButton{
-    align-self: flex-end;
+#submitButton{
+    font-family: 'Nova Oval', cursive;
+    font-size: 1.5rem;
+    color: white;
+    background: #4c0be8;
+    width: 8rem;
+    outline: none;
+    margin-top: 1rem;
 }
 
 .textContainer{
     display: none;
-
 }
 
 /* mobile mood boards================================================= */
@@ -310,7 +331,7 @@ input[type=text] {
     font-family: 'Nova Round', cursive;
     font-size: 1.5rem;
     color: #4c0be8; 
-    background: #b3f417;
+    background: rgb(215, 215, 215);
     width: 8rem;
     outline: none;
     border: none;
@@ -328,8 +349,341 @@ input[type=text] {
 }
 
 /*tablet portrait==========================================*/
+
 @media (min-width: 640px) and (max-width: 1024px){
+
+    /* tablet shared============================================ */
+    body{
+        background-image: url("../images/01.backgroundimg_invert.jpg");
+        background-size: auto 100vh;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
     
+    .body-background{
+        background-color: #cdcfed;
+        opacity: 0.9;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .outerWrapper{
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .navbar {
+        background-color: #4c0be8;
+        height: 12vh;
+        width: 100vw;
+        opacity: .8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 0;
+        z-index: 10;
+    }
+    
+    .menu {
+        position: absolute;
+        right:2rem;
+        top: 2.5rem;
+        height: 2rem;
+        font-family: 'Nova Slim', cursive;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    ul {
+        margin: 5px;
+    }
+    
+    li {
+        list-style: none;
+        display: inline;
+    }
+    
+    .nav-button {
+        margin: 10px 5px;
+    }
+    
+    #logo{
+        width: 14rem;
+        position: absolute;
+        left: 2.5rem;
+        top: .5rem;
+    }
+    
+    .title{
+        height: 20;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 10rem;
+        font-family: 'Nova Oval', cursive;
+        font-size: 3.5rem;
+        color: white;
+        background-color: #cdcfed;
+        opacity: .9;
+    }
+     
+    .footer{
+        background: #175bf4;
+        height: 8vh;
+        width: 100vw;
+        opacity: .8;
+        position: fixed;
+        top: 92vh;
+        margin: 0;
+        z-index: 10;
+    }
+    
+    /* tablet =================================================*/
+    
+    .swatchContainer{
+        height: 80;
+        width: auto;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+        padding-top: .5rem;
+        margin-bottom: 3rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    
+    .swatch{
+        width: 21vw;
+        height: 21vw;
+        /* width: 6rem;
+        height: 6rem; */
+        margin: 1rem;
+        background: grey;
+        border-radius: 50%;
+    }
+    
+    .mobileHide {
+        display: none;
+    }
+    
+    /* tablet mood editor CSS ==============================================> */
+    
+    .editorContainer{
+        width: 100vw;
+        height: auto;
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .paletteContainer{
+        width: 100 vw;
+        height: auto;
+        display: none;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .palette{
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    .editorContainer{
+        width: 100vw;
+        height: auto;
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .buttonContainer{
+        width: 80%;
+        height: auto;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    button{
+        font-family: 'Nova Round', cursive;
+        font-size: 3rem;
+        color: #4c0be8; 
+        background: rgb(215, 215, 215);
+        width: 16rem;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        margin: .5rem;
+    }
+    
+    #reset{
+        font-family: 'Nova Oval', cursive;
+        font-size: 3rem;
+        color: #4c0be8;
+        background:white;
+        width: 16rem;
+        outline: none;
+        margin: .5rem;
+        margin-top: 1.2rem;
+    }
+    
+    #save{
+        font-family: 'Nova Oval', cursive;
+        font-size: 3rem;
+        color: white;
+        background: #4c0be8;
+        width: 16rem;
+        outline: none;
+        margin: .5rem;
+        margin-top: 1.2rem;
+    }
+    
+    .colorInfo{
+        font-family: 'Nova Oval', cursive;
+        font-size: .8rem;
+        color: #4c0be8; 
+        margin: 2rem;
+    }
+    
+    
+    /* tablet editor–text inputs CSS ===================================> */
+    
+    .submitContainer{
+        width: 100vw;
+        height: auto;
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    
+    }
+    
+    .inputs{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    input[type=text] {
+        width: 100%;
+        padding: 4px 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-family: 'Nova Slim', cursive;
+        color: white;
+        font-size: 2rem;
+        background: #4c0be8;
+        opacity: .5;
+        overflow: hidden;
+      }
+
+      textarea{
+        width: 100%;
+        padding: 4px 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-family: 'Nova Slim', cursive;
+        font-size: 2rem;
+        color: white;
+        background: #4c0be8;
+        opacity: .5;
+        overflow: hidden;
+      }
+    
+      input[type=date] {
+        width: 100%;
+        padding: 4px 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-family: 'Nova Slim', cursive;
+        color: white;
+        font-size: 1.5rem;
+        background: #4c0be8;
+        opacity: .5;
+      }
+    
+    .form{
+        width: 100%;
+        height: auto;
+        font-family: 'Nova Oval', cursive;
+        font-size: 2rem;
+        color: #4c0be8;
+        margin: 0 auto;
+    }
+    
+    #submitButton{
+        font-family: 'Nova Oval', cursive;
+        font-size: 3rem;
+        color: white;
+        background: #4c0be8;
+        width: 16rem;
+        outline: none;
+        margin: .5rem;
+        margin-top: 1.2rem;
+    }
+    
+    .textContainer{
+        display: none;
+    }
+    
+    /* tablet mood boards================================================= */
+    
+    .boardWrapper{
+        display: flex;
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .moodBoardButtonContainer{
+        display: flex;
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .boardButton{
+        font-family: 'Nova Round', cursive;
+        font-size: 3rem;
+        color: #4c0be8; 
+        background: rgb(215, 215, 215);
+        width: 16rem;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        margin: .5rem;
+        margin-top: 1rem;
+    }
+    
+    .boardDisplay{
+        overflow: scroll;
+        background: lightslategray;
+        height: 35rem;
+        width: 35rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+    }
 }
 
 /*tablet landscape ========================================*/ 
