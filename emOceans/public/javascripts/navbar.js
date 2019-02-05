@@ -6,7 +6,7 @@
 //         // nabvar: "hidden";
 //     }
 // }
-let menu = document.querySelector('.menu');
+let menu = document.querySelector('.hamburgerMenu');
 let hamburger = document.querySelector('.hamburger');
 // function toggleMenu() {
 //     let menuClassArray = [].slice.call(menu.classList)

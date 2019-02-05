@@ -2,16 +2,19 @@
   box-sizing: border-box;
 }
 
-.menu{
+.hamburgerMenu{
     /* border: 1px solid red; */
     overflow: hidden;   /*anything that goes outside this box will be hidden.*/
     height: 50px;
     width: 50px;
     z-index: 3;
     transition: 1s; /*transition to take place over 1second)*/
+    position: absolute;
+    right: 0;
+    top: 1rem;  
 }
 
-.menu.active {    /*will change on-click at later time*/
+.hamburgerMenu.active {    /*will change on-click at later time*/
    /* border: 1px solid red; */
     overflow: hidden;   /*anything that goes outside this box will be hidden.*/
     height: 100vh;
@@ -25,13 +28,13 @@
 
 
 
-.menu li{
+.hamburgerMenu li{
     display: block;
     /* display: inline-block; */
-    cursor: pointer;
+    color: #fff;
 }
 
-.menu.active li {
+.hamburgerMenu.active li {
   cursor: crosshair;
 }
 
@@ -69,10 +72,9 @@
 
   @media (min-width:510px){
   
-  .menu {
+  .hamburgerMenu {
     height: 4rem !important;
     overflow: visible;
-<<<<<<< HEAD
     width: 500px;
     display: flex;
     flex-direction: row;
@@ -82,24 +84,21 @@
 
 .menu.active{
     overflow: hidden;   /*anything that goes outside of this (.menu/.active) will be hidden.*/
-=======
     width: 400px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    cursor: pointer;
   }
 
-.menu.active{
-    overflow: hidden;   /*anything that goes outside this box will be hidden.*/
->>>>>>> a9e1992da9c2804d39559e4e0b25f5d3f2b839b8
+.hamburgerMenu.active{
+    overflow: hidden;   /*anything that goes outside of this (.menu/.active) will be hidden.*/
     height: 5rem;
     width: auto;
     background-color: transparent;
     font-size: 1rem;
-<<<<<<< HEAD
     cursor: pointer;
-=======
->>>>>>> a9e1992da9c2804d39559e4e0b25f5d3f2b839b8
+
 }
 .hamburger {
   display: none;
@@ -109,7 +108,7 @@ ul {
   margin: 5px;
 }
 
-.menu li {
+.hamburgerMenu li {
   display: inline-block;
 }
   }
