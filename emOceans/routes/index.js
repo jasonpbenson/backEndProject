@@ -13,22 +13,31 @@ var expressSession = require('express-session');
 
 const apiBaseUrl = `https://api.datamuse.com/words?ml=`;
 
+var moment = require('moment');
+moment().format();
+
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
+  let msg = "";
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
-    if (req.query.msg == 'regSuccess') {
-      let msg = "";
-      msg = "You're all signed up! Please log in.";
-      console.log(msg)
-    } else if (req.query.msg == 'hello') {
-      msg = "You're logged in."
-    }
-    res.render('index', {msg})
+    const selectionQuery = `SELECT * FROM moodData WHERE uid = ? AND date = CURDATE();`;
+    connection.query(selectionQuery, [req.session.uid], (error, results) => {
+      if(error) {throw error}
+      if (results.length > 5) {
+        res.redirect('/moodboards?msg=allDone')
+      } else if (results.length < 5) {
+        msg = "createNew"
+      } else if (req.query.msg == 'create') {
+        msg = "createNew"
+      }
+      res.render('index', { msg })
+    })
   }
 });
+
 
 router.get('/splash', (req, res, next) => {
   let msg = "";
@@ -69,7 +78,7 @@ router.post('/loginProcess',(req, res, next)=>{
               req.session.email = results[0].email;
               req.session.uid = results[0].id
               req.session.loggedIn = true;
-              res.redirect('/?msg=hello');
+              res.redirect('/?msg=create');
           };
       };
   });
@@ -89,8 +98,8 @@ router.get("/register", (req, res, next) => {
   });
 })
  
-const passwordRegex = new RegExp("^.{6,}$");
 // registerProcess
+const passwordRegex = new RegExp("^.{6,}$");
 router.post('/registerProcess', (req, res, next) => {
   const hashedPass = bcrypt.hashSync(req.body.password);
   const checkUserQuery = `SELECT * FROM users WHERE email = ?`;
@@ -146,7 +155,7 @@ router.post("/addMood", (req, res, next) => {
 router.get("/moodBoards", (req, res, next) => {
   const selectQuery = `SELECT mood, color, note, date FROM moodData
     WHERE uid = ?
-    ORDER BY date`;
+    ORDER BY date DESC`;
   connection.query(selectQuery, [req.session.uid], (err, results) => {
     if(err) {
       throw err

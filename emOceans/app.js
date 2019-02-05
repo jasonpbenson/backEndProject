@@ -40,6 +40,9 @@ app.use('*', (req, res, next) => {
   next();
 })
 
+var moment = require('moment');
+moment().format();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
