@@ -87,7 +87,7 @@ router.post('/loginProcess',(req, res, next)=>{
 router.get("/register", (req, res, next) => {
   let msg = "";
   if (req.query.msg == 'registered') {
-    msg = 'This email address is already registered. Please <a href="/login">log in</a>.'
+    msg = `This email address is already registered. Please <a href="/login">log in</a>.`
   } else if (req.query.msg == 'password6chars') {
     msg = 'Your password must be at last 6 characters.'
   } else {
@@ -123,14 +123,6 @@ router.post('/registerProcess', (req, res, next) => {
   // res.json(req.body)
 })
 
-router.get("/create", (req, res, next) => {
-  res.render("create");
-})
-
-// router.post('/wordSearch', (req, res, next) => {
-  
-// })
-
 router.post("/addMood", (req, res, next) => {
   const newMood = req.body.newMood;
   const newColor = req.body.newColor;
@@ -144,17 +136,14 @@ router.post("/addMood", (req, res, next) => {
     if (err) {
       throw err;
     } else { 
-      console.log("whereami?") 
-
       res.redirect('moodBoards')
     }
   })
 })
 
-
 router.get("/moodBoards", (req, res, next) => {
   let today = moment()
-  console.log("hi", today.toDate(), req.session.uid)
+  // console.log("hi", today.toDate(), req.session.uid)
   const selectQuery = `SELECT mood, color, note, date FROM moodData
     WHERE uid = ? AND date = ?
     ORDER BY date DESC`;
@@ -163,17 +152,69 @@ router.get("/moodBoards", (req, res, next) => {
     if(err) {
       throw err
     } else {
-      res.render('moodboards', {results})
+      res.render('moodBoards', {results})
     }
-
   })
 })
 
+router.get("/moodBoards/day", (req, res, next) => {
+  const selectQuery = `SELECT mood, color, note, date FROM moodData
+  WHERE uid = ? AND date = CURDATE()
+  ORDER BY date DESC`;
+  connection.query( selectQuery, [req.session.uid], (err, results) => {
+    if(err) {
+      throw err
+    } else {
+    res.render("moodBoards", {results})
+    }
+  })
+})
+
+router.get("/moodBoards/week", (req, res, next) => {
+  const selectQuery = `SELECT mood, color, note, date FROM moodData
+  WHERE WEEK(date) = WEEK(NOW()) AND uid = ? 
+  ORDER BY date DESC;`
+  connection.query(selectQuery, [req.session.uid], (err, results) => {
+    console.log(results)
+    if (err) {
+      throw err
+    } else {
+      res.render('moodBoards', { results })
+    }
+  })
+})
+
+router.get("/moodBoards/month", (req, res, next) => {
+  const selectQuery = `SELECT mood, color, note, date FROM moodData
+  WHERE MONTH(date) = MONTH(NOW()) AND uid = ? 
+  ORDER BY date DESC;`
+  connection.query(selectQuery, [req.session.uid], (err, results) => {
+    console.log(results)
+    if (err) {
+      throw err
+    } else {
+      res.render('moodBoards', { results })
+    }
+  })
+})
+
+router.get("/moodBoards/year", (req, res, next) => {
+  const selectQuery = `SELECT mood, color, note, date FROM moodData
+  WHERE YEAR(date) = YEAR(NOW()) AND uid = ? 
+  ORDER BY date DESC;`
+  connection.query(selectQuery, [req.session.uid], (err, results) => {
+    console.log(results)
+    if (err) {
+      throw err
+    } else {
+      res.render('moodBoards', { results })
+    }
+  })
+})
 
 router.get("/about", (req, res, next) => {
   res.render("about");
 })
-
 
 router.get('/logout', (req, res, next) => {
   req.session.destroy();

@@ -127,7 +127,7 @@ let greens = new Color('green', 'rgb(11, 149, 74)', 'yellow', 'blue', colorPalet
 let turquoises = new Color('turquoise', 'rgb(18, 175, 197)', 'yellow', 'blue', colorPalette)
 let blues = new Color('blue', 'rgb(16, 79, 225)', 'rebeccapurple', 'navy', colorPalette)
 let purples = new Color('purple', 'rgb(101, 36, 239)', 'red', 'blue', colorPalette)
-let magentas = new Color('magaenta','rgb(218, 112, 214)', 'red', 'blue', colorPalette)
+let magentas = new Color('magenta','rgb(218, 112, 214)', 'red', 'blue', colorPalette)
 let browns = new Color('brown', 'rgb(113, 70, 18)', 'red', 'blue', colorPalette)
 let whites = new Color('white', 'rgb(255, 255, 255)', 'burlywood', 'aliceblue', colorPalette)
 let grays = new Color('gray', 'rgb(169, 169, 169)', 'palevioletred', 'lightskyblue', colorPalette)
@@ -168,10 +168,8 @@ resetButton.addEventListener('click', (event) => {
     document.getElementById("desat").disabled = false;
 })
 
-// JS for getting color INTO FORM to be posted ============================>
+// JS for getting color INTO FORM to be posted============================>
 
-// I'd rather NOT force them click a 'save color' button, but I can't think of another
-// way to get that color code to the form... this works for the MVP tho...
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
@@ -182,3 +180,11 @@ saveButton.addEventListener('click', (event) => {
     document.querySelector("#today").valueAsDate = new Date();
 })
 
+// JS for adding classes to moodBoard objects to size differently based on day/month/week/year===========>
+
+byDayButton.addEventListener('click', (event) => {
+    
+})
+byWeekButton
+byMonthButton
+byYearButton
