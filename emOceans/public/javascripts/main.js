@@ -57,12 +57,6 @@ class Palette{
         this.hue = chroma(this.hue).saturate(1)
         this.updateElement()
     }
-// desat() needs logic to stop it before it's gray (r, g, b all equal)!!!!!!!!!!!!!!!!
-// i tried converting to hsl but it didn't like that... with comparing values in an RGB array
-// to see if they were the same, the decimals prevented that, and I could not floor the numbers,
-// as that froze their numbers as they were when they were floored, and could not be further manipulated
-// by chroma. HSL/HSV methods returned drastically different hues... can't use...
-// THE ONLY THING I COULD THINK OF WAS DISABLING THE BUTTON AFTER ONE CLICK AND RE-ENABLING THE BUTTON ON RESET!
     desat() {
         this.hue = chroma(this.hue).desaturate(2)
         this.updateElement()
@@ -109,6 +103,7 @@ class Color{
             document.querySelector(".editorContainer").style.display = 'flex';
             document.querySelector(".paletteContainer").style.display = 'flex';
             document.querySelector(".swatchContainer").classList.add('mobileHide');
+            document.getElementById("desat").disabled = false;
         })
         document.querySelector('.swatchContainer').appendChild(this.element)
     }
@@ -122,14 +117,14 @@ class Color{
 // and adjust the ratio for .mix() to slow down the warming/cooling process
 
 let reds = new Color('red','rgb(220, 20, 60)', 'rgb(139, 69, 19)', 'rgb(102, 51, 153)', colorPalette)
-let oranges = new Color('orange', 'rgb(255, 128, 0)', 'brown', 'blue', colorPalette)
-let yellows = new Color('yellow', 'rgb(255, 215, 0)', 'orange', 'green', colorPalette)
-let greens = new Color('green', 'rgb(0, 128, 0)', 'yellow', 'blue', colorPalette)
-let turquoises = new Color('turquoise', 'rgb(0, 139, 139)', 'yellow', 'blue', colorPalette)
-let blues = new Color('blue', 'rgb(0, 0, 255)', 'rebeccapurple', 'navy', colorPalette)
-let purples = new Color('purple', 'rgb(102, 51, 153)', 'red', 'blue', colorPalette)
+let oranges = new Color('orange', 'rgb(245, 155, 6)', 'brown', 'blue', colorPalette)
+let yellows = new Color('yellow', 'rgb(245, 234, 6)', 'orange', 'green', colorPalette)
+let greens = new Color('green', 'rgb(11, 149, 74)', 'yellow', 'blue', colorPalette)
+let turquoises = new Color('turquoise', 'rgb(18, 175, 197)', 'yellow', 'blue', colorPalette)
+let blues = new Color('blue', 'rgb(16, 79, 225)', 'rebeccapurple', 'navy', colorPalette)
+let purples = new Color('purple', 'rgb(101, 36, 239)', 'red', 'blue', colorPalette)
 let magentas = new Color('magaenta','rgb(218, 112, 214)', 'red', 'blue', colorPalette)
-let browns = new Color('brown', 'rgb(139, 69, 19)', 'red', 'blue', colorPalette)
+let browns = new Color('brown', 'rgb(113, 70, 18)', 'red', 'blue', colorPalette)
 let whites = new Color('white', 'rgb(255, 255, 255)', 'burlywood', 'aliceblue', colorPalette)
 let grays = new Color('gray', 'rgb(169, 169, 169)', 'palevioletred', 'lightskyblue', colorPalette)
 let blacks = new Color('black', 'rgb(0, 0, 0)', 'red', 'blue', colorPalette)

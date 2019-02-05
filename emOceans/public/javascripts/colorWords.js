@@ -36,48 +36,71 @@ const colors = [
     {
         colorCode: "rgb(0, 139, 139)",
         colorName: "Turquoise",
-        turquoise: [`Femininity, sophistication, energy, wisdom, serenity, wholeness, creativity, 
+        attributes: [`Femininity, sophistication, energy, wisdom, serenity, wholeness, creativity, 
         balance, spirituality, tranquility, patience, intuition, friendship, and loyalty.`]
     },
 
     {
         colorCode: "rgb(0, 0, 255)",
         colorName: "Blue",
-        blue: [`Stability, calm, serenity, sadness, cold, distance, wisdom, loyalty,
+        attributes: [`Stability, calm, serenity, sadness, cold, distance, wisdom, loyalty,
         truth, focus.`]
     },
 
     {
         colorCode: "rgb(102, 51, 153)",
         colorName: "Purple",
-        purple: [`Creativity, royalty, wealth, sophistication, wisdom, exotica, spirituality,
+        attributes: [`Creativity, royalty, wealth, sophistication, wisdom, exotica, spirituality,
                 prosperity, respect, mystery.`]
     },
 
     {
         colorCode: "rgb(255, 255, 255)",
         colorName: "White",
-        white: [`Purity, innocence, cleanliness, sense of space, neutrality, peace, surrender, quiet.`]
+        attributes: [`Purity, innocence, cleanliness, sense of space, neutrality, peace, surrender, quiet.`]
     },
 
     {
         colorCode: "rgb(169, 169, 169)",
         colorName: "Gray",
-        gray: [`Neutrality, timelessness, practicality, boredom.`]
+        attributes: [`Neutrality, timelessness, practicality, boredom.`]
     },
     
     {
         colorCode: "rgb(0, 0, 0)",
         colorName: "Black",
-        black: [`Authority, power, strength, evil, intelligence, death, mourning, night,
+        attributes: [`Authority, power, strength, evil, intelligence, death, mourning, night,
         darkness, space, depth.`]
     },
 
     {   
         colorCode: "rgb(139, 69, 19)",
         colorName: "Brown",
-        brown: [`Groundedness, reliability, earthy, friendship, warmth, comfort, security
+        attributes: [`Groundedness, reliability, earthy, friendship, warmth, comfort, security
         natural, organic.`]
     }
    
 ]
+
+
+const aboutUs = [
+    {
+        name: 'Jason Benson',
+        color: "If Jason were a color, he would be...",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+
+    {
+        name: 'Katie Duane',
+        color: "If Katie were a color, she would be dark green, like the color of a large magnolia leaf or the needles on a sitka spruce, though semi-translucent, amorphous.",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+
+    {
+        name: 'Christopher Soltis',
+        color: "If Chris were a color, he would be...",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+]
+    
+
