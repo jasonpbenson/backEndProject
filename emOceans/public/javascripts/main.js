@@ -183,8 +183,14 @@ saveButton.addEventListener('click', (event) => {
 // JS for adding classes to moodBoard objects to size differently based on day/month/week/year===========>
 
 byDayButton.addEventListener('click', (event) => {
-    
+    moodCircle.classList.add('byDay')
 })
-byWeekButton
-byMonthButton
-byYearButton
+byWeekButton.addEventListener('click', (event) => {
+    moodCircle.classList.add('byWeek')
+})
+byMonthButton.addEventListener('click', (event) => {
+    moodCircle.classList.add('byMonth')
+})
+byYearButton.addEventListener('click', (event) => {
+    moodCircle.classList.add('byYear')
+})
