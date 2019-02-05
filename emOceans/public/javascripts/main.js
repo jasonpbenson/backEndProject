@@ -78,7 +78,6 @@ class Palette{
     reset() {
         this.hue = this.originalColor
         this.updateElement()
-        console.log(this.hue)    
     }
     sendToForm() {
         this.hue = formColor.value
