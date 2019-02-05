@@ -36,7 +36,7 @@
                     <form class="form" id="moodForm" action="/addMood" method="post">
                         <label for="mood">Mood:</label> <input type="text" placeholder="in a word..." id="mood" name="newMood" required>
                         <label for="colorChoice"></label> <input type="hidden" id="colorChoice" name="newColor" required>
-                        <label for="note">Add Note:</label> <input type="text" placeholder="in a few words..." id="note" name="newNote">
+                        <label for="note">Add Note:</label> <textarea id="note" name="newNote">in a few words...</textarea>
                         <label for="date">Date:</label> <input type="date" id="today" name="newDate" required>
                         <div class="submitButton">
                             <button type="submit">Submit</button>
@@ -49,8 +49,8 @@
         
             <div class="textContainer">
                 <div class="dataMuse">
-                    <h3>Can't find the right word for how you feel?</h3>
                     <div class="word-search">
+                        <span>Find another word for how you feel...</span>
                         <form id="word-form">
                             <input id="search-input" type="text" placeholder="Sad" />
                             <button type="submit">Search</button>

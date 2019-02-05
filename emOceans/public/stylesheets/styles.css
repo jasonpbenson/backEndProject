@@ -7,14 +7,14 @@ font-family: 'Nova Oval', cursive;
 font-family: 'Nova Cut', cursive; */
 
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
 /* MOBILE SHARED CSS =======================================================> */
 
-body{
+body {
     background-image: url("../images/01.backgroundimg_invert.jpg");
     background-size: auto 100vh;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body{
     overflow: scroll;
 }
 
-.body-background{
+.body-background {
     background-color: #cdcfed;
     opacity: 0.9;
     width: 100%;
@@ -70,14 +70,14 @@ li {
     margin: 10px 5px;
 }
 
-#logo{
+#logo {
     width: 10rem;
     position: absolute;
     left: 2rem;
     top: .75rem;
 }
 
-.title{
+.title {
     height: 20;
     text-align: center;
     vertical-align: middle;
@@ -89,7 +89,7 @@ li {
     opacity: .9;
 }
  
-.footer{
+.footer {
     background: #175bf4;
     height: 8vh;
     width: 100vw;
@@ -102,7 +102,7 @@ li {
 
 /* mobile =================================================*/
 
-.swatchContainer{
+.swatchContainer {
     height: 80;
     width: auto;
     display: flex;
@@ -112,7 +112,7 @@ li {
     margin-bottom: 3rem;
 }
 
-.swatch{
+.swatch {
     width: 26vw;
     height: 26vw;
     /* width: 6rem;
@@ -128,7 +128,7 @@ li {
 
 /* mood editor CSS ==============================================> */
 
-.editorContainer{
+.editorContainer {
     width: 100vw;
     height: auto;
     display: none;
@@ -138,7 +138,7 @@ li {
     align-items: center;
 }
 
-.paletteContainer{
+.paletteContainer {
     width: 100 vw;
     height: auto;
     display: none;
@@ -148,16 +148,17 @@ li {
     margin-bottom: 2rem;
 }
 
-.palette{
+.palette {
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
     margin: 0 auto;
+    border: 3px dotted white;
 }
 
 /* style for desktop */
 
-.editorContainer{
+.editorContainer {
     width: 100vw;
     height: auto;
     display: none;
@@ -167,7 +168,7 @@ li {
     align-items: center;
 }
 
-.buttonContainer{
+.buttonContainer {
     width: 80%;
     height: auto;
     text-align: center;
@@ -175,7 +176,7 @@ li {
     margin-bottom: 2rem;
 }
 
-button{
+button {
     font-family: 'Nova Round', cursive;
     font-size: 1.5rem;
     color: #4c0be8; 
@@ -336,12 +337,8 @@ input[type=text] {
 
 }
 
-/* Desktop ================================================*/
+/* Desktop ==================================================================================================*/
 @media (min-width: 1024px) {
-
-    /* .hide{
-        visibility: visible;
-    } */
 
     body {
         background-image: url("../images/01.backgroundimg_invert.jpg");
@@ -432,7 +429,6 @@ input[type=text] {
     .palette {
         width: 200px;
         height: 200px;
-        background-color: gray;
         border-radius: 50%;
         margin: 1rem;
     }
@@ -447,6 +443,7 @@ input[type=text] {
     .buttonContainer {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 1rem 2rem;
         width: 200px;
     }
@@ -454,19 +451,191 @@ input[type=text] {
     button {
         margin: 2px;
         background-color: rgb(215, 215, 215);
-        font-size: 14px;
+        font-size: 16px;
         
     }
 
     .submitContainer{
-        width: 100%;
+        width: 50%;
         display: none;
         flex-direction: column;
         align-items: space-evenly;
         justify-content: center;
     }
 
+    form {
+        margin: 0.5 0rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
 
+    form label,
+    form input {
+        display: block;
+        margin-top: 5px;
+        width: 70%;
+    }
+
+    form input {
+        font-size: 12pt;
+        font-family: inherit;
+    }
+
+    #note {
+        width: 100%;
+        height: 100px;
+        font-family: inherit;
+        font-size: 14px;
+    }
+
+    .textContainer {
+        display: none;
+        margin: 3rem auto;
+        width: 400px;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .dataMuse {
+        font-family: 'Nova Oval', cursive;
+        color: #4c0be8;
+        width: 100%;
+    }
+
+    .word-info-box {
+        margin: 5px;
+    }
+}
+
+/* Desktop XL =======================================================================================================*/
+@media (min-width: 1400px) {
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        height: 6rem;
+        margin: 0;
+        z-index: 1;
+    }
+
+    ul {
+        margin: 5px;
+    }
+
+    .menu {
+        position: absolute;
+        right: 20px;
+    }
+
+    li {
+        list-style: none;
+        display: inline;
+        line-height: 3rem;
+    }
+
+    .title {
+        font-size: 44pt;
+        margin-top: 8rem;
+        padding-top: 0rem;
+        width: 100%;
+        background-color: #cdcfed;
+        opacity: .9;
+    }
+
+    .outerWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .swatchContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 500px;
+        margin: 2rem 1rem;
+    }
+
+    .swatch {
+        background-color: gray;
+        height: 125px;
+        width: 125px;
+        border-radius: 50%;
+        margin: 5px 5px 15px 5px;
+    }
+
+    .mobileHide {
+        display: flex;
+}
+
+    .paletteContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .palette {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 2rem;
+    }
+
+    .editorContainer {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin: 2rem 3rem;
+    }
+    
+    .buttonContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem rem;
+        width: 200px;
+    }
+
+    button {
+        margin: 3px;
+        background-color: rgb(215, 215, 215);
+        font-size: 18px;
+        height: 30px;
+    }
+
+    .submitContainer{
+        width: 50%;
+        display: none;
+        flex-direction: column;
+        align-items: space-evenly;
+        justify-content: center;
+    }
+
+    #reset{
+        font-family: 'Nova Oval', cursive;
+        font-size: 1.5rem;
+        color: #4c0be8;
+        background:white;
+        width: 9rem;
+        outline: none;
+        margin: .5rem;
+        margin-top: 1.2rem;
+}
+
+    #save{
+        font-family: 'Nova Oval', cursive;
+        font-size: 1.5rem;
+        color: white;
+        background: #4c0be8;
+        width: 9rem;
+        outline: none;
+        margin: .5rem;
+        margin-top: 1.2rem;
+}
 
     form {
         width: 75%;
@@ -498,7 +667,4 @@ input[type=text] {
     }
 }
 
-/* Desktop ================================================*/
-@media (min-width: 1400px) {
 
-}
