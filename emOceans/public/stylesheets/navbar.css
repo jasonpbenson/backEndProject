@@ -73,18 +73,20 @@
   .menu {
     height: 4rem !important;
     overflow: visible;
-    width: 400px;
+    width: 500px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    cursor: pointer;
   }
 
 .menu.active{
-    overflow: hidden;   /*anything that goes outside this box will be hidden.*/
+    overflow: hidden;   /*anything that goes outside of this (.menu/.active) will be hidden.*/
     height: 5rem;
     width: auto;
     background-color: transparent;
     font-size: 1rem;
+    cursor: pointer;
 }
 .hamburger {
   display: none;
