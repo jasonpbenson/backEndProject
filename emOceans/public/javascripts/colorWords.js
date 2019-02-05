@@ -1,3 +1,23 @@
+const aboutUs = [
+    {
+        name: 'Jason Benson',
+        color: "If Jason were a color, he would be...",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+
+    {
+        name: 'Katie Duane',
+        color: "If Katie were a color, she would be dark green, like the color of a large magnolia leaf or the needles on a sitka spruce, though semi-translucent, amorphous.",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+
+    {
+        name: 'Christopher Soltis',
+        color: "If Chris were a color, he would be...",
+        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
+    },
+]
+
 const colors = [
     {
         colorCode: "rgb(220, 20, 60)",
@@ -7,13 +27,13 @@ const colors = [
     },
 
     {
-        colorCode: "rgb(255, 128, 0)",
+        colorCode: "rgb(218, 112, 214)",
         colorName: "Pink",
         attributes: [`Romance, love, gentleness, calm, tenderness.`]
     },
 
     {
-        colorCode: "rgb(255, 215, 0)",
+        colorCode: "rgb(245, 155, 6)",
         colorName: "Orange",
         attributes: [`Happiness, energy, excitement, enthusiasm, warmth, prosperity,
         change, stimulation, youthfulness.`]
@@ -65,7 +85,7 @@ const colors = [
         colorName: "Gray",
         attributes: [`Neutrality, timelessness, practicality, boredom.`]
     },
-    
+
     {
         colorCode: "rgb(0, 0, 0)",
         colorName: "Black",
@@ -73,34 +93,36 @@ const colors = [
         darkness, space, depth.`]
     },
 
-    {   
+    {
         colorCode: "rgb(139, 69, 19)",
         colorName: "Brown",
         attributes: [`Groundedness, reliability, earthy, friendship, warmth, comfort, security
         natural, organic.`]
     }
-   
+
 ]
 
+let aboutDevs = document.getElementById('devWrapper');
+let aboutHTML = "";
+for (let i = 0; i < aboutUs.length; i++) {
+    aboutHTML += `<div class="name"> ${aboutUs[i].name} </div>
+        <div class="about"> ${aboutUs[i].color} </div>
+        <div class="profile"> ${aboutUs[i].profile} </div>`
+    $(aboutDevs).html(aboutHTML)
+}
 
-const aboutUs = [
-    {
-        name: 'Jason Benson',
-        color: "If Jason were a color, he would be...",
-        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
-    },
+let colorData = document.getElementById('aboutColorWrapper');
+let colorHTML = "";
+for (let i = 0; i < colors.length; i++) {
+    colorHTML += `<div class="colorExample"> ${colors[i].colorCode} </div>
+        <div class="colorName"> ${colors[i].colorName}</div>
+        <div class="aboutColor"> ${colors[i].attributes}</div>
+        `
+    $(colorData).html(colorHTML);
+}
 
-    {
-        name: 'Katie Duane',
-        color: "If Katie were a color, she would be dark green, like the color of a large magnolia leaf or the needles on a sitka spruce, though semi-translucent, amorphous.",
-        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
-    },
-
-    {
-        name: 'Christopher Soltis',
-        color: "If Chris were a color, he would be...",
-        profile: `<a href ="https://github.com/jasonpbenson" target="_blank">Github Profile</a>`,
-    },
-]
-    
-
+let colorExs = document.querySelectorAll(".colorExample")
+console.log(colorExs)
+for (let i = 0; i < colors.length; i++) {
+    colorExs[i].style.backgroundColor = colors[i].colorCode
+}
