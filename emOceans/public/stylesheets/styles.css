@@ -354,6 +354,9 @@ input[type=text] {
     width: 20rem;
     margin-top: 2rem;
     border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /*tablet portrait==========================================*/
@@ -702,6 +705,9 @@ input[type=text] {
         width: 35rem;
         margin-top: 2rem;
         border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 

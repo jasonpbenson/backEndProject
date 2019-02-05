@@ -72,6 +72,7 @@
   .menu {
     height: 4rem !important;
     overflow: visible;
+<<<<<<< HEAD
     width: 500px;
     display: flex;
     flex-direction: row;
@@ -81,11 +82,24 @@
 
 .menu.active{
     overflow: hidden;   /*anything that goes outside of this (.menu/.active) will be hidden.*/
+=======
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+.menu.active{
+    overflow: hidden;   /*anything that goes outside this box will be hidden.*/
+>>>>>>> a9e1992da9c2804d39559e4e0b25f5d3f2b839b8
     height: 5rem;
     width: auto;
     background-color: transparent;
     font-size: 1rem;
+<<<<<<< HEAD
     cursor: pointer;
+=======
+>>>>>>> a9e1992da9c2804d39559e4e0b25f5d3f2b839b8
 }
 .hamburger {
   display: none;
