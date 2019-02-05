@@ -153,10 +153,13 @@ router.post("/addMood", (req, res, next) => {
 
 
 router.get("/moodBoards", (req, res, next) => {
+  let today = moment()
+  console.log("hi", today.toDate(), req.session.uid)
   const selectQuery = `SELECT mood, color, note, date FROM moodData
-    WHERE uid = ?
+    WHERE uid = ? AND date = ?
     ORDER BY date DESC`;
-  connection.query(selectQuery, [req.session.uid], (err, results) => {
+  connection.query(selectQuery, [req.session.uid, today.format('YYYY-MM-DD')], (err, results) => {
+    console.log(results)
     if(err) {
       throw err
     } else {
