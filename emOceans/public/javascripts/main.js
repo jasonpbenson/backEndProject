@@ -28,10 +28,14 @@ class Palette{
         this.originalColor = hue;
     }
     updateElement() {
-        this.element.style.backgroundColor = this.hue;
+        if (this.element){
+            this.element.style.backgroundColor = this.hue;
+        }
     }
     resetElement() {
-        this.element.style.backgroundColor = this.originalColor;
+        if (this.element) {
+            this.element.style.backgroundColor = this.originalColor;
+        }
     }
     lighten() {
         let total;

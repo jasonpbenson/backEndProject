@@ -3,7 +3,7 @@
     optional font => font-family: 'Muli', sans-serif;
 
     } */ 
-    Prevents any issues with margin ande height
+    /* Prevents any issues with margin ande height */
     *{
         box-sizing: border-box;
     }
@@ -185,5 +185,49 @@
         border-radius: 6px;
     }
     
-    
+    /* USER LOGIN */
 
+        
+/* body{
+    background-image: url("../images/01.backgroundimg_invert.jpg");
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+input[type=text] {
+        width: 100%;
+        padding: 4px 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        font-family: 'Nova Slim', cursive;
+        color: white;
+        font-size: 2rem;
+        background: #4c0be8;
+        opacity: .5;
+        overflow: hidden;
+      }
+*/
+
+/*  
+@media (min-width: 640px) and (max-width: 1024px){
+}
+*/
+@media (max-width: 499px){ 
+
+.form-container, .form-container{
+        max-width: 175px;
+        margin: auto;
+}
+.tester-1{
+    margin-top: 1rem;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    } 
+} 
+/* @media (min-width: 640px) and (max-width: 1024px){
+} */
