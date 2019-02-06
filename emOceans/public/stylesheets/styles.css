@@ -496,40 +496,6 @@ input[type=text] {
     text-decoration: underline;
 }
 
-.mood-circle-data{
-    clip-path: circle(8rem at center);
-    width: 16rem;
-    height: 16rem;
-    border-radius: 50%;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    overflow: scroll;
-    text-align: center;
-}
-
-.mood-date{
-    font-family: 'Nova Slim', cursive;
-    font-size: 1rem;
-    color: white;
-    width: 14rem;
-
-}
-
-.mood-word{
-    font-family: 'Nova Slim', cursive;
-    font-size: 2rem;
-    color: white;
-}
-
-.mood-note{
-    font-family: 'Nova Slim', cursive;
-    font-size: 2rem;
-    color: white;
-}
-
 /*tablet portrait==========================================*/
 
 @media (min-width: 640px) and (max-width: 1024px){
@@ -1457,7 +1423,6 @@ input[type=text] {
         overflow: scroll;
     }
 
-}
     /* XL desktop about page ================================================================ */
 
     .aboutTitle {
