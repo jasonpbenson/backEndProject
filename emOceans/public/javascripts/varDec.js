@@ -20,4 +20,4 @@ let byMonthButton = document.getElementById('viewMonth');
 let byYearButton = document.getElementById('viewYear');
 
 //MOODBOARD DATA VARIABLE DECLARATIONS =======================================>
-let moodCircle = document.getElementsByClassName('mood-circle-data')
+// let moodCircle = document.getElementsByClassName('mood-circle-data')

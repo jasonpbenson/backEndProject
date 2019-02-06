@@ -156,7 +156,6 @@ desatButton.addEventListener('click', (event) => {
 
 warmButton.addEventListener('click', (event) => {
     colorPalette.warmer()
-    
 })
 
 coolButton.addEventListener('click', (event) => {
@@ -180,17 +179,3 @@ saveButton.addEventListener('click', (event) => {
     document.querySelector("#today").valueAsDate = new Date();
 })
 
-// JS for adding classes to moodBoard objects to size differently based on day/month/week/year===========>
-
-byDayButton.addEventListener('click', (event) => {
-    moodCircle.classList.add('byDay')
-})
-byWeekButton.addEventListener('click', (event) => {
-    moodCircle.classList.add('byWeek')
-})
-byMonthButton.addEventListener('click', (event) => {
-    moodCircle.classList.add('byMonth')
-})
-byYearButton.addEventListener('click', (event) => {
-    moodCircle.classList.add('byYear')
-})
