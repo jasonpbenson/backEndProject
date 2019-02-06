@@ -126,7 +126,7 @@ li {
     display: none;
 }
 
-/* mood editor CSS ==============================================> */
+/* mobile mood editor ==============================================> */
 
 .editorContainer {
     width: 100vw;
@@ -155,8 +155,6 @@ li {
     margin: 0 auto;
     border: 3px dotted white;
 }
-
-/* style for desktop */
 
 .editorContainer {
 
@@ -218,7 +216,7 @@ button {
     margin: 2rem;
 }
 
-/* mood editor–text inputs CSS ===================================> */
+/* mobile mood editor–text inputs ===================================> */
 
 .submitContainer{
     width: 100vw;
@@ -357,6 +355,40 @@ input[type=text] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.mood-circle-data{
+    clip-path: circle(8rem at center);
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow: scroll;
+    text-align: center;
+}
+
+.mood-date{
+    font-family: 'Nova Slim', cursive;
+    font-size: 1rem;
+    color: white;
+    width: 14rem;
+
+}
+
+.mood-word{
+    font-family: 'Nova Slim', cursive;
+    font-size: 2rem;
+    color: white;
+}
+
+.mood-note{
+    font-family: 'Nova Slim', cursive;
+    font-size: 2rem;
+    color: white;
 }
 
 /*tablet portrait==========================================*/
