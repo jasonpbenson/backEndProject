@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% include headerLinks %>
 
+
     <style>
     
     .mood-circle-data{
@@ -17,7 +18,6 @@
         margin: 1rem;
     }
     </style>
-
 
 </head>
 
@@ -45,8 +45,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="/javascripts/navbar.js"></script>
 
-    
+
     <script>
+
         var timeline = <% timeline %>
         $(document).ready(() => {
             let moodDataz = <%- JSON.stringify(results) %> 
@@ -78,7 +79,9 @@
                 moodCircle.appendChild(moodNote)
             }
         })
+        
     </script>
+    
     <script src="/javascripts/varDec.js"></script>
     <script src="/javascripts/moodBoards.js"></script>
 </body>
