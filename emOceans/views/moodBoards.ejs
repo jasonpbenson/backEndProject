@@ -7,7 +7,6 @@
     <title>emOceans-create</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% include headerLinks %>
-
 </head>
 
 <body>
@@ -18,7 +17,7 @@
             <div class="boardWrapper">
                 <div class="moodBoardButtonContainer">
                     <button class="boardButton" id="viewDay"><a href="/moodBoards/day">Day</a></button>
-                    <button class="boardButton" id="viewWeek"><a href="/moodBoards/week">Week</a></button>
+                    <button class="boardButton" id="viewWeek"><a href="/moodBoards/">Week</a></button>
                     <button class="boardButton" id="viewMonth"><a href="/moodBoards/month">Month</a></button>
                     <button class="boardButton" id="viewYear"><a href="/moodBoards/year">Year</a></button>
                 </div>
@@ -35,11 +34,22 @@
 
 
     <script>
+
+        var timeline = <% timeline %>
         $(document).ready(() => {
-            const moodDataz = <%- JSON.stringify(results) %>
+            let moodDataz = <%- JSON.stringify(results) %> 
                 for (let i = 0; i < moodDataz.length; i++) {
-                let moodCircle = document.createElement('div');
-                moodCircle.classList.add('mood-circle-data')
+                    let moodCircle = document.createElement('div');
+                    moodCircle.classList.add('mood-circle-data')
+                    if(timeline == 'day') {
+                        moodCircle.classList.add('byDay')
+                    } else if(timeline == 'week') {
+                        moodCircle.classList.add('byWeek')
+                    } else if(timeline == 'month') {
+                        moodCircle.classList.add('byMonth')
+                    } else if(timeline == 'year') {
+                        moodCircle.classList.add('byYear')
+                    }
                 moodCircle.style.backgroundColor = moodDataz[i].color 
                 document.querySelector('.boardDisplay').appendChild(moodCircle)
                 let moodDate = document.createElement('div');
@@ -59,8 +69,11 @@
                 const nicerDate = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
             }
         })
+        
     </script>
-
+    
+    <script src="/javascripts/varDec.js"></script>
+    <script src="/javascripts/moodBoards.js"></script>
 </body>
 
 </html>
