@@ -8,18 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% include headerLinks %>
 
-    <style>
-    
-    .mood-circle-data{
-        width: 15rem;
-        height: 15rem;
-        border-radius: 50%;
-        margin: 1rem;
-    }
-    </style>
-
-    
-
 </head>
 
 <body>
@@ -35,7 +23,7 @@
                     <button class="boardButton" id="viewYear"><a href="/moodBoards/year">Year</a></button>
                 </div>
                 <div class="boardDisplay">
-                    
+            
             
                 </div>
             </div>
@@ -43,8 +31,8 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/en-us.js"></script> -->
+    <script src="/javascripts/navbar.js"></script>
+
 
     <script>
         $(document).ready(() => {
@@ -66,6 +54,9 @@
                 moodNote.classList.add('mood-note');
                 moodNote.textContent = moodDataz[i].note ? moodDataz[i].note : "";
                 moodCircle.appendChild(moodNote)
+                const d = new Date("2019-02-05T16:12:23Z"); 
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                const nicerDate = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
             }
         })
     </script>
