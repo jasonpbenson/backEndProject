@@ -226,10 +226,30 @@ input[type=text] {
     display: flex;
     justify-content: center;
     } 
+.header-content h1{
+    /* font-size: 2rem; */
+}
+
+.header-overlay{
+    display: none;
+}
+
+.form-container-reg{
+    font-size: 1.2rem;
+    width: 12rem;
+    overflow: hidden;
+    /* justify-content: center; */
+
+}
+.tester{
+    margin-top: 1rem;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+} 
+
+
 } 
 /* @media (min-width: 640px) and (max-width: 1024px){
-<<<<<<< HEAD
 } */
-=======
-} */
->>>>>>> a9e1992da9c2804d39559e4e0b25f5d3f2b839b8
