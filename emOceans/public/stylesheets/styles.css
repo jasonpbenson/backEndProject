@@ -40,7 +40,7 @@ body {
     background-color: #4c0be8;
     height: 15vh;
     width: 100vw;
-    opacity: .8;
+    opacity: 0.8;
     position: fixed;
     top: 0;
     left: 0;
@@ -86,7 +86,7 @@ li {
     font-size: 2rem;
     color: white;
     background-color: #cdcfed;
-    opacity: .9;
+    opacity: 0.9;
 }
  
 .footer {
