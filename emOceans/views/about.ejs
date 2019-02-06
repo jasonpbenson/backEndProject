@@ -9,27 +9,35 @@
 </head>
 <body>
     <% include navbar %>
-    <section class="intro">
-        <h3> About emOceans</h3>
-        <p> emOceans is a simple web application that allows you to take note
-            of your mood every day using color and language. Each day (and each mood,
-            each memory) forms a tiny drop in the vast and ever-shifting ocean that is 
-            you. We hope to make the observation and appreciation of those shifts and 
-            waves more accessible, helpful, and more beautiful.
-        </p>
-    </section>
-    <div class="aboutColorWrapper">
+    <div class="body-background">
+        <div class="outerWrapper" id="aboutWrapper">
+            <section class="intro">
+                <div class="title"> ABOUT emOceans</div>
+                <p class="aboutEmoceans"> emOceans is a simple web application that allows you to take note
+                    of your mood every day using color and language. Each day (and each mood,
+                    each memory) forms a tiny drop in the vast and ever-shifting ocean that is
+                    you. We hope to make the observation and appreciation of those shifts and
+                    waves more accessible, helpful, and more beautiful.
+                </p>
+            </section>
+            
+            <div class="aboutTitle"> COLOR ASSOCIATIONS</div>
+            <div id="aboutColorWrapper">
 
+            
+            </div>
+
+            <div class="aboutTitle"> ABOUT THE DEVELOPERS </div>
+            <div id="devWrapper">
+            
+            </div>
         </div>
 
-    <div class="devWrapper">
-        
     </div>
         
             
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/javascripts/varDec.js"></script>
-    <script src="/javascripts/main.js"></script>
     <script src="/javascripts/colorWords.js"></script>
     <script src="/javascripts/navbar.js"></script>
 </body>

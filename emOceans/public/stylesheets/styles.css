@@ -357,6 +357,97 @@ input[type=text] {
     flex-wrap: wrap;
 }
 
+
+/* mobile about page ========================================= */
+
+#aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nova Round', cursive;
+    margin-bottom: 1rem;
+    overflow: scroll;
+    }
+
+.aboutTitle {
+    font-size: 22pt;
+    text-align: center;
+    font-family: 'Nova Oval', cursive;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0rem;
+    width: 100%;
+    color: white;
+    background-color: #cdcfed;
+    opacity: .9;
+}
+
+.aboutEmoceans{
+    width: 80%;
+    text-align: center;
+    margin: 2rem auto;
+    color: #4c0be8;
+}
+
+#aboutColorWrapper{
+    /* display: flex;
+    justify-content: center; */
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.aboutColor{
+    text-align: center;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem auto;
+}
+
+.colorName{
+    display:inline-block;
+}
+
+#devWrapper{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.devName{
+    text-align:center;
+    margin: 1rem auto;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.fullName{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.aboutEach{
+    width: 75%;
+    margin: 0 auto;
+    color:#e3e4f2;
+}
+
+.profile{
+    margin-top: 0.5rem;
+}
+
+.profile a{
+    color:#4c0be8;
+}
+
+.profile a:hover{
+    text-decoration: underline;
+}
+
+
+
+=======
 .mood-circle-data{
     clip-path: circle(8rem at center);
     width: 16rem;
@@ -922,17 +1013,86 @@ input[type=text] {
     }
 
     .boardDisplay{
-    overflow: scroll;
-    background: rgb(190, 189, 213);
-    height: 40rem;
-    width: 40rem;
-    margin-top: 2rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+        overflow: scroll;
+        background: rgb(190, 189, 213);
+        height: 40rem;
+        width: 40rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
 
-}
+    }
+
+/* desktop about page ================================================================ */
+
+    #aboutWrapper {
+        margin-bottom: 2rem;
+        
+    }
+    .aboutTitle {
+        font-size: 30pt;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding-top: 0rem;
+    }
+
+    .aboutEmoceans{
+        width: 60%;
+        margin: 2rem auto;
+    }
+
+    #aboutColorWrapper{
+        width: 800px;
+        margin-bottom: 2rem;
+    }
+
+    .aboutColor{
+        width: 90%;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem auto;
+    }
+
+    .colorName{
+        display:inline-block;
+    }
+
+    #devWrapper{
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .devName{
+        margin: 1rem auto;
+        width: 90%;
+        padding: 0.5rem;
+        border-radius: 10px;
+    }
+
+    .fullName{
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .aboutEach{
+        width: 75%;
+        margin: 0 auto;
+        color:#e3e4f2;
+    }
+
+    .profile{
+        margin-top: 0.5rem;
+    }
+
+    .profile a{
+        color:#4c0be8;
+    }
+
+    .profile a:hover{
+        text-decoration: underline;
+    }
 }
 
 /* Desktop XL =======================================================================================================*/
@@ -998,7 +1158,7 @@ input[type=text] {
 
     .mobileHide {
         display: flex;
-}
+    }
 
     .paletteContainer {
         display: flex;
@@ -1053,7 +1213,7 @@ input[type=text] {
         outline: none;
         margin: .5rem;
         margin-top: 1.2rem;
-}
+    }
 
     #save{
         font-family: 'Nova Oval', cursive;
@@ -1064,7 +1224,7 @@ input[type=text] {
         outline: none;
         margin: .5rem;
         margin-top: 1.2rem;
-}
+    }
 
     form {
         width: 75%;
@@ -1094,4 +1254,61 @@ input[type=text] {
         display: none;
     }
 
+    /* XL desktop about page ================================================================ */
+
+    .aboutTitle {
+        font-size: 36pt;
+    }
+
+    .aboutEmoceans{
+        width: 800px;
+        text-align: center;
+        margin: 2rem auto;
+        color: #4c0be8;
+    }
+
+    #aboutColorWrapper{
+        /* display: flex;
+        justify-content: center; */
+        width: 1000px;
+        margin-bottom: 2rem;
+    }
+
+    .aboutColor{
+        text-align: center;
+        width: 90%;
+        
+    }
+
+    .colorName{
+        display:inline-block;
+    }
+
+    #devWrapper{
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .devName{
+        text-align:center;
+        margin: 1rem auto;
+        width: 90%;
+        padding: 0.5rem;
+        border-radius: 10px;;
+    }
+
+    .fullName{
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .aboutEach{
+        width: 75%;
+        margin: 0 auto;
+        color:#e3e4f2;
+    }
+
+    .profile{
+        margin-top: 0.5rem;
+    }
 }
