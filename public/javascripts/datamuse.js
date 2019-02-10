@@ -13,7 +13,7 @@ $('#word-form').submit((event) => {
     $.getJSON(wordSearchUrl, (wordInfo) => {
         console.log(wordInfo)
         if (wordInfo.status == 404) {
-            let newHTML = `<p> Didn't quite get that! </p>`;
+            newHTML = `<p> Didn't quite get that! </p>`;
         }
         else{
             newHTML += `<div class="results">`

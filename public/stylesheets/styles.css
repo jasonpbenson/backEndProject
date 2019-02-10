@@ -374,7 +374,7 @@ input[type=text] {
     overflow: scroll;
 }
 
-.mood-date{
+.mood-date, .modal-date{
     font-family: 'Nova Round', cursive;
     font-size: 1rem;
     color: inherit;
@@ -385,7 +385,7 @@ input[type=text] {
     margin: .5rem;
 }
 
-.mood-word{
+.mood-word, .modal-word{
     font-family: 'Nova Round', cursive;
     font-size: 1rem;
     color: inherit;
@@ -396,7 +396,7 @@ input[type=text] {
     margin: .5rem;
 }
 
-.mood-note{
+.mood-note, .modal-note{
     font-family: 'Nova Round', cursive;
     font-size: 1rem;
     color: inherit;
@@ -407,6 +407,35 @@ input[type=text] {
     overflow: scroll;
     padding: 1rem;
 }
+
+.back-drop {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(205, 207, 237);
+    opacity: 0.7;
+    z-index: 100;
+}
+
+.mood-modal {
+    display: none;
+    position: fixed;
+    align-self: center;
+    width: 16rem;
+    height: 16rem;
+    clip-path: circle(8rem at center);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    overflow: scroll;
+    z-index: 200;
+    background-color: black;
+}
+
 
 
 /* mobile about page ========================================= */
@@ -950,7 +979,7 @@ input[type=text] {
         margin-top: 7rem;
         padding-top: 0rem;
         width: 100%;
-        background-color: #cdcfed;
+        background-color: rgb(205, 207, 237);
         opacity: .9;
     }
 
@@ -1043,7 +1072,7 @@ input[type=text] {
         width: 70%;
     }
 
-    form input {
+    form input { 
         font-size: 12pt;
         font-family: inherit;
     }
@@ -1074,9 +1103,10 @@ input[type=text] {
         margin: 5px;
     }
 
+    /* DESKTOP mood boards =======================================> */
     .boardDisplay{
         overflow: scroll;
-        background: slategray;
+        background: rgb(205, 207, 237);
         height: 60vh;
         width: 75vw;
         margin-top: 2rem;
@@ -1087,10 +1117,10 @@ input[type=text] {
     }
 
     .mood-circle-data{
-        clip-path: circle(7rem at center);
+        /* clip-path: circle(7rem at center);
         width: 14rem;
         height: 14rem;
-        margin: 1rem;
+        margin: 1rem; */
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -1099,6 +1129,40 @@ input[type=text] {
         justify-content: center;
         text-align: center;
         overflow: scroll;
+    }
+    
+    .byDay {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byWeek {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byMonth{
+        clip-path: circle(4rem at center);
+        width: 8rem;
+        height: 8rem;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .byYear {
+        clip-path: circle(2rem at center);
+        width: 4rem;
+        height: 4rem;
+        margin: 0.25rem;
+
     }
     
     .mood-date{
