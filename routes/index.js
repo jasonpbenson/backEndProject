@@ -23,18 +23,10 @@ router.get('/', (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
-    const selectionQuery = `SELECT * FROM moodData WHERE uid = ? AND date = CURDATE();`;
-    connection.query(selectionQuery, [req.session.uid], (error, results) => {
-      if(error) {throw error}
-      if (results.length > 5) {
-        // res.redirect('/moodboards?msg=allDone')
-      } else if (results.length < 5) {
-        msg = "createNew"
-      } else if (req.query.msg == 'create') {
+      if (req.query.msg == 'create') {
         msg = "createNew"
       }
       res.render('index', { msg })
-    })
   }
 });
 
@@ -72,7 +64,6 @@ router.post('/loginProcess',(req, res, next)=>{
           if(!passwordsMatch){
               res.redirect('/login?msg=badPass');
           }else{
-              console.log(results[0].id)
               req.session.firstName = results[0].firstName;
               req.session.lastName = results[0].lastName;
               req.session.email = results[0].email;
@@ -142,66 +133,86 @@ router.post("/addMood", (req, res, next) => {
 })
 
 router.get("/moodBoards", (req, res, next) => {
-  const selectQuery = `SELECT mood, color, note, date FROM moodData
-  WHERE WEEK(date) = WEEK(NOW()) AND uid = ? 
-  ORDER BY date DESC;`
-  connection.query(selectQuery, [req.session.uid], (err, results) => {
-    console.log("I am a week")
-    // console.log(results)
-    if (err) {
-      throw err
-    }
-      res.render('moodBoards', { results, timeline: 'week' })
-  })
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE WEEK(date) = WEEK(NOW()) AND uid = ? 
+    ORDER BY date DESC;`
+    connection.query(selectQuery, [req.session.uid], (err, results) => {
+      console.log("I am a week")
+      // console.log(results)
+      if (err) {
+        throw err
+      }
+        res.render('moodBoards', { results, timeline: 'week' })
+    })
+  }
 })
 
 router.get("/moodBoards/day", (req, res, next) => {
-  const selectQuery = `SELECT mood, color, note, date FROM moodData
-  WHERE uid = ? AND date = CURDATE()
-  ORDER BY date DESC`;
-  connection.query( selectQuery, [req.session.uid], (err, results) => {
-    console.log("I am a day")
-    if(err) {
-      throw err
-    } else {
-    res.render("moodBoards", {results, timeline: 'day'})
-    }
-  })
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE uid = ? AND date = CURDATE()
+    ORDER BY date DESC`;
+    connection.query( selectQuery, [req.session.uid], (err, results) => {
+      console.log("I am a day")
+      if(err) {
+        throw err
+      } else {
+      res.render("moodBoards", {results, timeline: 'day'})
+      }
+    })
+  }
 })
 
 
 router.get("/moodBoards/month", (req, res, next) => {
-  const selectQuery = `SELECT mood, color, note, date FROM moodData
-  WHERE MONTH(date) = MONTH(NOW()) AND uid = ? 
-  ORDER BY date DESC;`
-  connection.query(selectQuery, [req.session.uid], (err, results) => {
-    // console.log(results)
-    console.log("I am a month")
-    if (err) {
-      throw err
-    } else {
-      res.render('moodBoards', { results, timeline: "month" })
-    }
-  })
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE MONTH(date) = MONTH(NOW()) AND uid = ? 
+    ORDER BY date DESC;`
+    connection.query(selectQuery, [req.session.uid], (err, results) => {
+      // console.log(results)
+      console.log("I am a month")
+      if (err) {
+        throw err
+      } else {
+        res.render('moodBoards', { results, timeline: "month" })
+      }
+    })
+  }
 })
 
 router.get("/moodBoards/year", (req, res, next) => {
-  const selectQuery = `SELECT mood, color, note, date FROM moodData
-  WHERE YEAR(date) = YEAR(NOW()) AND uid = ? 
-  ORDER BY date DESC;`
-  connection.query(selectQuery, [req.session.uid], (err, results) => {
-    // console.log(results)
-    console.log("I am a year")
-    if (err) {
-      throw err
-    } else {
-      res.render('moodBoards', { results, timeline: 'year'})
-    }
-  })
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE YEAR(date) = YEAR(NOW()) AND uid = ? 
+    ORDER BY date DESC;`
+    connection.query(selectQuery, [req.session.uid], (err, results) => {
+      // console.log(results)
+      console.log("I am a year")
+      if (err) {
+        throw err
+      } else {
+        res.render('moodBoards', { results, timeline: 'year'})
+      }
+    })
+  }
 })
 
 router.get("/about", (req, res, next) => {
-  res.render("about");
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    res.render("about");
+  }
 })
 
 router.get('/logout', (req, res, next) => {
