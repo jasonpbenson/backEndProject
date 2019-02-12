@@ -1,8 +1,4 @@
-/* .body{
-    font-family: 'Fira Sans', 'Muli', sans-serif;
-    optional font => font-family: 'Muli', sans-serif;
-    } */ 
-    /* Prevents any issues with margin ande height */
+
     *{
         box-sizing: border-box;
     }
@@ -10,24 +6,13 @@
     body{
     
         margin: 0;
-        font-family: 'Fira Sans', 'Muli', sans-serif;
+        font-family: 'Nova Oval', cursive;
         font-size: 2rem;
         line-height:1.5;
         color: purple;
         overflow-x:hidden;
-    
-        
-        /* margin: 0;
-        width: 100%;
-        font-family: "Fira Sans", "sans-serif";
-        line-height: 1rem;
-        color: black;
-        overflow-x: hidden;     give to nauhn */
     } 
-    
-    /* h1{
-        font-size: 4rem;
-    } */
+
     
     #logo{
         width: 30%;
@@ -37,13 +22,8 @@
     .container{
         max-width: 800px;
         margin: auto;
-        /* padding-left: 1rem;             removed */
-        /* padding-right: 1rem;            removed */
-        /* text-align: center;             removed; don't see this does anything */
     }
-    
-    
-    
+
     .v-header{
         height: 100vh;
         display: flex;
@@ -89,13 +69,9 @@
         padding-bottom: 2em;
     }
     
-    
-    
     .header-content h2{
         font-size: 50px;
         margin-bottom: 0;
-        /* text-align: center; */
-    
     }
     
     .header-content p{
@@ -103,14 +79,20 @@
         display: block;
         padding-bottom: 2rem;
     }
-    
+
+     form .password {
+        font-family: 'Nova Oval', cursive;
+        margin: 5px;
+        padding: 5px;
+        font-size: 14pt;
+    }
     
     form label{
        /* flex-grow: 1; */
        flex-basis: 50%;
        text-align: left;
-        
     }
+
     .form-container{
         display: flex;
         flex-wrap: wrap;
@@ -118,6 +100,7 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .form-container-reg{
         display: flex;
         flex-wrap: wrap;
@@ -136,7 +119,7 @@
         text-align: right;
         margin-right: 10px;
     }
-    /* button on Register */
+   
     .targBox{   
         display: flex;
         background: teal;
@@ -145,16 +128,17 @@
         font-size: 1.5rem;
         padding: 0.5rem 1rem;
         justify-content: flex-end;
-        /* margin: 0 auto; */
-        /* align-self: center; */
     }
     
     .tester{
-        /* display: flex;
-        justify-content: center; */
-        /* align-self: center; */
         margin:10px auto;
     }
+
+    .tester-1{
+        width: 100%;
+        padding: 10px;
+    }
+
     .targBoxlogin{
         display: flex;
         background: teal;
@@ -164,14 +148,6 @@
         padding: 0.5rem 1rem;
         justify-content: flex-end;
         float: right;
-    }
-    .tester-1{
-        /* display: flex;
-        justify-content: center; */
-        /* align-self: center; */
-        /* margin:10px auto; */
-        width: 100%;
-        padding: 10px;
     }
     
     .btn{
@@ -184,35 +160,7 @@
         border-radius: 6px;
     }
     
-    /* USER LOGIN */
 
-        
-/* body{
-    background-image: url("../images/01.backgroundimg_invert.jpg");
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-input[type=text] {
-        width: 100%;
-        padding: 4px 8px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        font-family: 'Nova Slim', cursive;
-        color: white;
-        font-size: 2rem;
-        background: #4c0be8;
-        opacity: .5;
-        overflow: hidden;
-      }
-*/
-
-/*  
-@media (min-width: 640px) and (max-width: 1024px){
-}
-*/
 @media (max-width: 499px){ 
 
 .form-container, .form-container{
@@ -226,9 +174,6 @@ input[type=text] {
     display: flex;
     justify-content: center;
     } 
-.header-content h1{
-    /* font-size: 2rem; */
-}
 
 .header-overlay{
     display: none;
@@ -249,7 +194,7 @@ input[type=text] {
     justify-content: center;
 } 
 
-
 } 
+
 /* @media (min-width: 640px) and (max-width: 1024px){
 } */
