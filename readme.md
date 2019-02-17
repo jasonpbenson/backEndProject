@@ -29,7 +29,7 @@ data to render beautifully!
     - Solution: We used the stringified results and variables for different chunks of time to style the "moodboards" accordingly, displaying data differently for days, weeks, months, and years.
     ![moodboards image](_screenshots/moodboardsdesktop.png)
     ![moodboards image](_screenshots/moodsyear.png)
-    ![moodboards image](_screenshots/moodsmodalmonth.png)
+    ![moodboards image](_screenshots/moodmodalmonth.png)
 
 - Challenge: Mobile/Desktop Design Differences. Interaction with the app differs vastly between different screen sizes, presenting challenges especially when working with add-on items, like a word-search API.
     - Solution: Restructred HTML and CSS for better use of the word-search API on all screensizes.
