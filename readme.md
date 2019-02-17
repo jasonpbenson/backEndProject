@@ -12,7 +12,9 @@
 # Description
 emOceans is a simple web application that allows you to take note of your mood every day using color and language. Each day (and each mood, each memory) forms a tiny drop in the vast and ever-shifting ocean that is every human. We hope to make the observation and appreciation of those shifts and waves more accessible, helpful, and more beautiful.
 
-[moodboards](_screenshots/moodsmonth.png)
+![moodboards image](_screenshots/moodsmonth.png)
+![moodboards image](/_screenshots/moodsmonth.png)
+![moodboards image](./_screenshots/moodsmonth.png)
 
 # Technologies
 - HTML/CSS/JavaScript
