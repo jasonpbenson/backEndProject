@@ -13,8 +13,6 @@
 emOceans is a simple web application that allows you to take note of your mood every day using color and language. Each day (and each mood, each memory) forms a tiny drop in the vast and ever-shifting ocean that is every human. We hope to make the observation and appreciation of those shifts and waves more accessible, helpful, and more beautiful.
 
 ![moodboards image](_screenshots/moodsmonth.png)
-![moodboards image](/_screenshots/moodsmonth.png)
-![moodboards image](./_screenshots/moodsmonth.png)
 
 # Technologies
 - HTML/CSS/JavaScript
@@ -28,22 +26,29 @@ emOceans is a simple web application that allows you to take note of your mood e
 # Challenges & Solutions
 - Challenge: We're not using any charting or data visualization library to get our
 data to render beautifully!
-    - Solution: We're still working on solving this; likely the implementation of moment.js will allow us to isolate blocks of time and render them accordingly.
+    - Solution: We used the stringified results and variables for different chunks of time to style the "moodboards" accordingly, displaying data differently for days, weeks, months, and years.
+    ![moodboards image](_screenshots/moodboardsdesktop.png)
+    ![moodboards image](_screenshots/moodsyear.png)
+    ![moodboards image](_screenshots/moodsmodalmonth.png)
 
 - Challenge: Mobile/Desktop Design Differences. Interaction with the app differs vastly between different screen sizes, presenting challenges especially when working with add-on items, like a word-search API.
-    - Solution: We're still working on a solution and may restructure HTML for easier programming, and in order to accommodate extras (like a word search), while not necessary, are helpful to many users. Currently, the API interactivity is only accesible on desktop-sized screens.
+    - Solution: Restructred HTML and CSS for better use of the word-search API on all screensizes.
+
+    ![moodboards image](_screenshots/newmooddesktop3.png)
 
 - Challenge: Scripting with data from the DB in the DOM with JSON.stringify.
-    - Solution: The scripting itself was not an issue, but syntactical confusion between the interfaces was; we're working this out at present for more specific CSS targeting with classes for better data visualization.  
+    - Solution: The scripting itself was not an issue, but syntactical confusion between the interfaces was; we worked this out for more specific CSS targeting with classes for better data visualization.  
 
 # MVP
 A front-and-backend web application, with responsive design, that allows a user to track mood using color and language. It also allows the user to easily view their moods overtime by taking note of shifts in color, and through clicking, scrolling or hovering, allows them to see mood/note for each day.
 
+![moodboards image](_screenshots/newmooddesktop2.png)
+
 # Stretch Goals
-- Complete integration of datamuse API (at present it is in use for large screens only), as well as making the API results clickable to send to form.
-- Rendering data in concentric circles to represent chunks of time (still a WIP) or altering size/behavior of the circles according to view (month vs. day, for example).
+- Making the API results clickable to send to form.
+- Rendering data with different sizes/styles/functionality depending on amount of time displayed (done!)
 - Use of datamuse API on mobile/tablet (WIP)
-- Seamless movement through data visualization even on small screens (likely use of a modal) (WIP)
+- Seamless movement through data visualization even on small screens (likely use of a modal) (done!)
 
 
 # Authors
