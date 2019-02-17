@@ -178,4 +178,3 @@ saveButton.addEventListener('click', (event) => {
     document.querySelector(".submitContainer").style.display = 'flex';
     document.querySelector("#today").valueAsDate = new Date();
 })
-

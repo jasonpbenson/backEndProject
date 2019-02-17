@@ -26,7 +26,7 @@ router.get('/', (req, res, next) => {
     const selectQuery = `SELECT status FROM users
     WHERE id = ?;`;
     connection.query(selectQuery, [req.session.uid], (err, results) => {
-      if (req.query.msg == 'create' && results[0].status == 1) {
+      if (results[0].status == 1) {
         res.render('index', {})
       } else {
         res.redirect('welcome')
@@ -35,18 +35,29 @@ router.get('/', (req, res, next) => {
   } 
 });
 
+router.post('/', (req, res, next) => {
+  let msg;
+  const statusQuery = `UPDATE users 
+  SET status = 1 
+  WHERE id = ?;`;
+  connection.query(statusQuery, [req.session.uid], (err, results) => {
+    msg = "create"
+    res.render('index', {})
+  })
+})
+
 router.get('/welcome', (req, res, next) => {
-  
+  let msg;
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
-    res.render("welcome");
+    msg = "begin"
+    res.render("welcome", {msg});
   }
 })
 
-
 router.get('/splash', (req, res, next) => {
-  let msg = "";
+  let msg;
   if (req.query.msg == 'mustLogIn') {
     msg = "Please log in or register."
     console.log(msg)

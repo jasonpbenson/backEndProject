@@ -1,26 +1,15 @@
-// function myNav(){
-//     let x = document.querySelector(".menu");
-//     if(x === active/hover){
-//         // navbar: "active";
-//     } else {
-//         // nabvar: "hidden";
-//     }
-// }
-let menu = document.querySelector('.hamburgerMenu');
-let hamburger = document.querySelector('.hamburger');
-// function toggleMenu() {
-//     let menuClassArray = [].slice.call(menu.classList)
-//     if(menuClassArray.includes('active')){  //used include instad of className because there are too many classes
-//         // menuClassArray.remove('active');
-//         menuClassArray = "hidden";
-        
-//     }else{
-//         menuClassArray.add('active');   //THis is the function for it to work but we still have tell it when to do this.
-//     }
-//  }
+// MENU VARIABLE DECLARATIONS ===============================================>
+let menu = document.querySelector('.menu');
+let navButtons = document.querySelectorAll('.nav-button')
+let navArray = Array.from(navButtons)
+let mobileMenu = document.querySelector('.mobile-menu')
 
- hamburger.addEventListener('click', ()=>{
-     menu.classList.toggle('active')
-    })   //THis is the function for it to work but we still have tell it when to do this.);
- 
- 
+
+// mobile menu JS ========================================================>
+mobileMenu.addEventListener('click', () => {
+    navArray.forEach(function(button){
+        button.style.display = 'block';
+        button.style.textAlign = 'right';
+        button.style.backgroundColor = '#4c0be8';
+    })
+})

@@ -20,7 +20,7 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .body-background {
@@ -28,17 +28,17 @@ body {
     opacity: 0.9;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .outerWrapper{
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
 .navbar {
     background-color: #4c0be8;
-    height: 15vh;
+    height: 5rem;
     width: 100vw;
     opacity: 0.8;
     position: fixed;
@@ -54,7 +54,13 @@ body {
     top: 1rem;
     height: 2rem;
     font-family: 'Nova Slim', cursive;
+    font-size: 12pt;
     color: white;
+}
+
+.mobile-menu{
+    visibility: visible;
+    font-size: 18pt;
 }
 
 ul {
@@ -66,15 +72,20 @@ li {
     display: inline;
 }
 
+li:hover{
+    text-decoration: underline;
+}
+
 .nav-button {
     margin: 10px 5px;
+    display: none;
 }
 
 #logo {
-    width: 10rem;
+    width: 8rem;
     position: absolute;
-    left: 2rem;
-    top: .75rem;
+    left: 1rem;
+    top: 0.5rem;
 }
 
 .title {
@@ -297,18 +308,22 @@ input[type=text] {
 
 .textContainer{
     display: none;
-    /* margin: 3rem auto;
-    width: 400px;
+    margin: 3rem auto;
+    width: 80%;
     background-color: rgb(255, 255, 255);
     padding: 1rem;
-    border-radius: 10px; */
-    
+    border-radius: 10px;
 }
 
 .dataMuse {
     font-family: 'Nova Oval', cursive;
     color: #4c0be8;
     width: 100%;
+}
+
+.datamuse-button {
+    font-size: 1.5rem;
+    width: 8rem;
 }
 
 /* mobile mood boards================================================= */
@@ -347,7 +362,7 @@ input[type=text] {
 
 .boardDisplay{
     overflow: scroll;
-    background: lightslategray;
+    background: rgb(205, 207, 237);
     height: 20rem;
     width: 20rem;
     margin: 2rem;
@@ -373,6 +388,41 @@ input[type=text] {
     text-align: center;
     overflow: scroll;
 }
+
+ 
+    .byDay {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byWeek {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byMonth{
+        clip-path: circle(4rem at center);
+        width: 8rem;
+        height: 8rem;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .byYear {
+        clip-path: circle(2rem at center);
+        width: 4rem;
+        height: 4rem;
+        margin: 0.25rem;
+
+    }
 
 .mood-date, .modal-date{
     font-family: 'Nova Round', cursive;
@@ -525,9 +575,35 @@ input[type=text] {
     text-decoration: underline;
 }
 
+/* WELCOME PAGE ======================================================= */
+.welcome-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.welcome-text {
+    font-family: 'Nova Round', cursive;
+    color :#4c0be8;
+}
+
+.begin-form {
+    display: flex;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.begin-button {
+    width: 150px;
+    height: auto;
+}
+
+
 /*tablet portrait==========================================*/
 
-@media (min-width: 640px) and (max-width: 1024px){
+@media (min-width: 640px) and (max-width: 960px){
 
     /* tablet shared============================================ */
     body{
@@ -536,7 +612,7 @@ input[type=text] {
         background-repeat: no-repeat;
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        overflow: scroll;
     }
     
     .body-background{
@@ -544,17 +620,17 @@ input[type=text] {
         opacity: 0.9;
         width: 100%;
         height: 100vh;
-        overflow: hidden;
+        overflow: scroll;
     }
     
     .outerWrapper{
-        height: 100vh;
         width: 100vw;
+        height: auto;
     }
     
     .navbar {
         background-color: #4c0be8;
-        height: 12vh;
+        height: 6rem;
         width: 100vw;
         opacity: .8;
         position: fixed;
@@ -571,7 +647,12 @@ input[type=text] {
         height: 2rem;
         font-family: 'Nova Slim', cursive;
         color: white;
-        font-size: 1.5rem;
+        font-size: 14pt;
+    }
+
+    .mobile-menu{
+        visibility: hidden;
+        
     }
     
     ul {
@@ -585,10 +666,11 @@ input[type=text] {
     
     .nav-button {
         margin: 10px 5px;
+        display: inline;
     }
     
     #logo{
-        width: 14rem;
+        width: 10rem;
         position: absolute;
         left: 2.5rem;
         top: .5rem;
@@ -805,10 +887,10 @@ input[type=text] {
     
     #submitButton{
         font-family: 'Nova Oval', cursive;
-        font-size: 3rem;
+        font-size: 20pt;
         color: white;
         background: #4c0be8;
-        width: 16rem;
+        width: 10rem;
         outline: none;
         margin: .5rem;
         margin-top: 1.2rem;
@@ -827,7 +909,13 @@ input[type=text] {
         font-family: 'Nova Oval', cursive;
         color: #4c0be8;
         width: 100%;
-}
+    }
+
+    .datamuse-button {
+        font-size: 20pt;
+        width: 10rem;
+    }
+
     
     /* tablet mood boards================================================= */
     
@@ -866,7 +954,7 @@ input[type=text] {
     
     .boardDisplay{
         overflow: scroll;
-        background: lightslategray;
+        background: rgb(205, 207, 237);
         height: 35rem;
         width: 35rem;
         margin-top: 2rem;
@@ -889,6 +977,41 @@ input[type=text] {
         justify-content: center;
         text-align: center;
         overflow: scroll;
+    }
+
+     
+    .byDay {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byWeek {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byMonth{
+        clip-path: circle(4rem at center);
+        width: 8rem;
+        height: 8rem;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .byYear {
+        clip-path: circle(2rem at center);
+        width: 4rem;
+        height: 4rem;
+        margin: 0.25rem;
+
     }
     
     .mood-date{
@@ -923,15 +1046,28 @@ input[type=text] {
         height: 5rem;
         overflow: scroll;
     }
+
+
+    /* WELCOME PAGE ======================================================= */
+    .welcome-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .welcome-text {
+        font-family: 'Nova Round', cursive;
+        color :#4c0be8;
+    }
 }
 
 /*tablet landscape ========================================*/ 
-@media (max-width: 1024px) and (min-width: 960px) and (max-height: 768px) and (min-height: 692px){
+/* @media (max-width: 1024px) and (min-width: 960px) and (max-height: 768px) and (min-height: 692px){
 
-}
+} */
 
 /* Desktop ==================================================================================================*/
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
 
     body {
         background-image: url("../images/01.backgroundimg_invert.jpg");
@@ -958,6 +1094,13 @@ input[type=text] {
         z-index: 1;
     }
 
+    #logo{
+        width: 10rem;
+        position: absolute;
+        left: 2.5rem;
+        top: .5rem;
+    }
+
     ul {
         margin: 5px;
     }
@@ -966,12 +1109,23 @@ input[type=text] {
         position: absolute;
         right: 10px;
         height: 3rem; 
+        font-size: 14pt;
+    }
+
+    .mobile-menu{
+        visibility: hidden;
+        
     }
 
     li {
         list-style: none;
         display: inline;
         line-height: 3rem;
+    }
+
+    .nav-button {
+        margin: 10px 5px;
+        display: inline;
     }
 
     .title {
@@ -1266,6 +1420,18 @@ input[type=text] {
     .profile a:hover{
         text-decoration: underline;
     }
+
+    /* WELCOME PAGE ======================================================= */
+    .welcome-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .welcome-text {
+        font-family: 'Nova Round', cursive;
+        color :#4c0be8;
+    }
 }
 
 /* Desktop XL =======================================================================================================*/
@@ -1279,6 +1445,13 @@ input[type=text] {
         z-index: 1;
     }
 
+    #logo{
+        width: 10rem;
+        position: absolute;
+        left: 2.5rem;
+        top: .5rem;
+    }
+
     ul {
         margin: 5px;
     }
@@ -1286,12 +1459,23 @@ input[type=text] {
     .menu {
         position: absolute;
         right: 20px;
+        font-size: 14pt;
+    }
+
+    .mobile-menu{
+        visibility: hidden;
+        
     }
 
     li {
         list-style: none;
         display: inline;
         line-height: 3rem;
+    }
+
+     .nav-button {
+        margin: 10px 5px;
+        display: inline;
     }
 
     .title {
@@ -1429,7 +1613,7 @@ input[type=text] {
   
     .boardDisplay{
         overflow: scroll;
-        background: slategray;
+        background: rgb(205, 207, 237);
         height: 60vh;
         width: 75vw;
         margin-top: 2rem;
@@ -1452,6 +1636,41 @@ input[type=text] {
         justify-content: center;
         text-align: center;
         overflow: scroll;
+    }
+
+     
+    .byDay {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byWeek {
+        clip-path: circle(7rem at center);
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+
+    }
+
+    .byMonth{
+        clip-path: circle(4rem at center);
+        width: 8rem;
+        height: 8rem;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .byYear {
+        clip-path: circle(2rem at center);
+        width: 4rem;
+        height: 4rem;
+        margin: 0.25rem;
+
     }
     
     .mood-date{
@@ -1543,5 +1762,12 @@ input[type=text] {
 
     .profile{
         margin-top: 0.5rem;
+    }
+
+    /* WELCOME PAGE ======================================================= */
+    .welcome-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
     }
 }
