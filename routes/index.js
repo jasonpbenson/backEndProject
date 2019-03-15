@@ -23,16 +23,41 @@ router.get('/', (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
-      if (req.query.msg == 'create') {
-        msg = "createNew"
+    const selectQuery = `SELECT status FROM users
+    WHERE id = ?;`;
+    connection.query(selectQuery, [req.session.uid], (err, results) => {
+      if (results[0].status == 1) {
+        res.render('index', {})
+      } else {
+        res.redirect('welcome')
       }
-      res.render('index', { msg })
-  }
+    })
+  } 
 });
 
+router.post('/', (req, res, next) => {
+  let msg;
+  const statusQuery = `UPDATE users 
+  SET status = 1 
+  WHERE id = ?;`;
+  connection.query(statusQuery, [req.session.uid], (err, results) => {
+    msg = "create"
+    res.render('index', {})
+  })
+})
+
+router.get('/welcome', (req, res, next) => {
+  let msg;
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    msg = "begin"
+    res.render("welcome", {msg});
+  }
+})
 
 router.get('/splash', (req, res, next) => {
-  let msg = "";
+  let msg;
   if (req.query.msg == 'mustLogIn') {
     msg = "Please log in or register."
     console.log(msg)
@@ -68,6 +93,7 @@ router.post('/loginProcess',(req, res, next)=>{
               req.session.lastName = results[0].lastName;
               req.session.email = results[0].email;
               req.session.uid = results[0].id
+              req.session.status = results[0].status
               req.session.loggedIn = true;
               res.redirect('/?msg=create');
           };
@@ -102,9 +128,9 @@ router.post('/registerProcess', (req, res, next) => {
     }else if(!passwordRegex.test(req.body.password)) {
       res.redirect('/register?msg=password6chars')
     }else{
-      const insertQuery = `INSERT INTO users (firstName, lastName, email, hash, phone)
+      const insertQuery = `INSERT INTO users (firstName, lastName, email, hash, phone, status)
       VALUES 
-      (?,?,?,?,?)`;
+      (?,?,?,?,?,0)`;
       connection.query(insertQuery, [req.body.firstName,req.body.lastName, req.body.email, hashedPass, req.body.phone], (error2, results2) => {
         if(error2) {throw error2}
         res.redirect('/?msg=regSuccess')
