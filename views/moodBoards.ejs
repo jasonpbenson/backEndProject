@@ -71,7 +71,7 @@
                 moodDate.classList.add('mood-date');
                 moodDate.textContent = new Date(moodDataz[i].date).toLocaleDateString();
                 moodCircle.appendChild(moodDate)
-                let moodWord = document.createElement('div');
+                let moodWord = document.createElement('p');
                 moodWord.classList.add('mood-word');
                 moodWord.textContent = moodDataz[i].mood
                 moodCircle.appendChild(moodWord)
