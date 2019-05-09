@@ -172,7 +172,7 @@ router.get("/moodBoards", (req, res, next) => {
     const selectQuery = `SELECT mood, color, note, date FROM moodData
     WHERE uid = ? 
     ORDER BY date DESC
-    LIMIT 10;`
+    LIMIT 6;`
     connection.query(selectQuery, [req.session.uid], (err, results) => {
       // console.log("I am the latest")
       if (err) {
