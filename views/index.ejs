@@ -10,55 +10,63 @@
 <body>
     <% include navbar %>
     <div class="body-background">
-        <div class="title">NEW MOOD</div>
-        <div class="outerWrapper">      
-            <div class="paletteContainer">
-                <div class="palette" id="palette"></div>
-            </div>
-            <div class="editorContainer">
-                <div class="buttonContainer">
-                    <button id="lighten">Lighten</button>
-                    <button id="darken">Darken</button>
-                    <button id="sat">Saturate</button>
-                    <button id="desat">Desaturate</button>
-                    <button id="warm">Warm</button>
-                    <button id="cool">Cool</button>
-                    <button id="reset">Reset</button>
-                    <button id="save">Save</button>
+        <div class="paletteContainer">
+            <div class="palette" id="palette"></div>
+        </div>
+        <div class="outerWrapper"> 
+            <div class="title">NEW MOOD</div>
+            <section class="addNewMood">
+                <!-- <div class="paletteContainer">
+                    <div class="palette" id="palette"></div>
+                </div> -->
+                <div class="editorContainer">
+                    <div class="buttonContainer">
+                        <button id="lighten">Lighten</button>
+                        <button id="darken">Darken</button>
+                        <button id="sat">Saturate</button>
+                        <button id="desat">Desaturate</button>
+                        <button id="warm">Warm</button>
+                        <button id="cool">Cool</button>
+                        <button id="reset">Reset</button>
+                        <button id="save">Save</button>
+                    </div>
                 </div>
-            </div>
-            <div class="swatchContainer">
-            
-            </div>
-            <div class="submitContainer">
-                <div class="inputs">
-    
-                    <form class="form" id="moodForm" action="/addMood" method="post">
-                        <label for="mood">Mood:</label> <input type="text" placeholder="in a word..." id="mood" name="newMood" maxlength="15" required>
-                        <label for="colorChoice"></label> <input type="hidden" id="colorChoice" name="newColor" required>
-                        <label for="note">Add Note:</label> <textarea id="note" name="newNote" placeholder="in a few words..."></textarea>
-                        <label for="date">Date:</label> <input type="date" id="today" name="newDate" required>
-                        <div>
-                            <button id="submitButton" type="submit">Submit</button>
+                <div class="swatchContainer">
+                
+                </div>
+            </section>
+
+            <section class="addNewMoodWords">
+                <div class="submitContainer">
+                    <div class="inputs">
+        
+                        <form class="form" id="moodForm" action="/addMood" method="post">
+                            <label for="mood">Mood:</label> <input type="text" placeholder="in a word..." id="mood" name="newMood" maxlength="15" required>
+                            <label for="colorChoice"></label> <input type="hidden" id="colorChoice" name="newColor" required>
+                            <label for="note">Add Note:</label> <textarea id="note" name="newNote" placeholder="in a few words..."></textarea>
+                            <label for="date">Date:</label> <input type="date" id="today" name="newDate" required>
+                            <div>
+                                <button id="submitButton" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="textContainer">
+                    <div class="dataMuse">
+                        <div class="word-search">
+                            <span>Find another word for how you feel...</span>
+                            <form id="word-form">
+                                <input id="search-input" type="text" placeholder="Sad" />
+                                <button class="datamuse-button" type="submit">Search</button>
+                            </form>
                         </div>
-                    </form>
+                        <div class="word-info-box"></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
         </div>
         
-            <div class="textContainer">
-                <div class="dataMuse">
-                    <div class="word-search">
-                        <span>Find another word for how you feel...</span>
-                        <form id="word-form">
-                            <input id="search-input" type="text" placeholder="Sad" />
-                            <button class="datamuse-button" type="submit">Search</button>
-                        </form>
-                    </div>
-                    <div class="word-info-box"></div>
-                </div>
-            </div>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
