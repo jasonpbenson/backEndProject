@@ -15,7 +15,7 @@ a {
 /* MOBILE SHARED CSS =======================================================> */
 
 html{
-    /* height: 100%; */
+    height: 100%;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
 }
@@ -25,31 +25,21 @@ html::-webkit-scrollbar {
 }
 
 body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
+    margin: 0;
     background-image: url("../images/01.backgroundimg_invert.jpg");
+    background-color: #cdcfed;
+    background-blend-mode: soft-light;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 0;
-    /* overflow-x: hidden; */
-}
 
-.body-background {
-    background-color: #cdcfed;
-    opacity: 0.9;
-    width: 100%;
-    height: 100%;
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    /* overflow-y: scroll;
-    overflow-x: hidden; */
 }
 
 .outerWrapper{
-    height: auto;
-    width: 100vw;
+    width: 100%;
+    min-height: 100%;
 }
 
 .navbar {
@@ -61,17 +51,20 @@ body {
     top: 0;
     left: 0;
     margin: 0;
-    z-index: 10;
+    z-index: 110;
 }
 
 .menu {
     position: absolute;
-    right:2rem;
-    top: 1rem;
-    height: 2rem;
+    top: 4rem;
+    height: auto;
+    right: 1rem;
     font-family: 'Nova Slim', cursive;
-    font-size: 12pt;
+    font-size: 14pt;
+    text-align: center;
     color: white;
+    display: none;
+    flex-direction: column;
 }
 
 .menu a {
@@ -79,8 +72,16 @@ body {
     text-decoration: none;
 }
 
-.mobile-menu{
+.mobile-toggle{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+}
+
+.mobile-menu-button{
     visibility: visible;
+    color: white;
     font-size: 18pt;
 }
 
@@ -90,7 +91,7 @@ ul {
 
 li {
     list-style: none;
-    display: inline;
+    /* display: inline; */
 }
 
 li:hover{
@@ -98,7 +99,7 @@ li:hover{
 }
 
 .nav-button {
-    margin: 10px 5px;
+    /* margin: 10px 5px; */
     display: none;
 }
 
@@ -117,7 +118,6 @@ li:hover{
     font-family: 'Nova Oval', cursive;
     font-size: 2rem;
     color: white;
-    background-color: #cdcfed;
     opacity: 0.9;
 }
  
@@ -158,13 +158,6 @@ li:hover{
 
 /* mobile mood editor ==============================================> */
 
-/* .addNewMood{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-} */
-
 .addNewMoodWords{
     display: flex;
     flex-direction: column;
@@ -188,7 +181,7 @@ li:hover{
     display: none;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2rem;
+    margin: 1rem;
     margin-bottom: .5rem;
 }
 
@@ -196,7 +189,7 @@ li:hover{
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 2rem auto;
     border: 3px dotted white;
 }
 
@@ -414,7 +407,7 @@ form{
     overflow-x: hidden;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    background: rgb(205, 207, 237);
+    /* background: rgb(205, 207, 237); */
     height: auto;
     min-height: 200px;
     width: 20rem;
@@ -536,12 +529,13 @@ form{
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     top: 5rem;
+    bottom: 0;
     width: 100%;
-    height: calc(100% - 5rem);
-    position: absolute;
+    min-height: calc(100% - 5rem);
+    position: fixed;
     background-color: rgb(205, 207, 237);
     opacity: 0.7;
-    z-index: 100;
+    z-index: 105;
 }
 
 .back-drop::-webkit-scrollbar { 
@@ -550,7 +544,7 @@ form{
 
 .mood-modal {
     display: none;
-    position: fixed;
+    position: absolute;
     align-self: flex-start;
     width: 16rem;
     height: 16rem;
@@ -561,7 +555,7 @@ form{
     align-content: center;
     justify-content: center;
     text-align: center;
-    z-index: 200;
+    z-index: 108;
     background-color: black;
 }
 
@@ -590,7 +584,6 @@ form{
     padding-top: 0rem;
     width: 100%;
     color: white;
-    background-color: #cdcfed;
     opacity: .9;
 }
 
@@ -691,18 +684,27 @@ form{
     }
     
     .menu {
-        top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        /* top: 2.5rem; */
         font-size: 14pt;
+        top: 1rem;
+        height: 3rem;
     }
 
-    .mobile-menu{
+    .mobile-toggle{
+        display: none;
+    }
+
+    .mobile-menu-button{
         visibility: hidden;
         
     }
     
     .nav-button {
+        display: block;
         margin: 10px 5px;
-        display: inline;
+        /* display: inline; */
     }
     
     #logo{
@@ -712,8 +714,9 @@ form{
     }
     
     .title{
-        padding-top: 9rem;
-        font-size: 2.5rem;
+        padding-top: 6rem;
+        margin: 1rem auto;
+        font-size: 3.5rem;
     }
     
     /* tablet =================================================*/
@@ -736,6 +739,7 @@ form{
     
     /* tablet mood editor CSS ==============================================> */
     
+
     .paletteContainer{
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -897,12 +901,19 @@ form{
 
     .menu {
         position: absolute;
+        top: 1rem;
+        display: flex;
+        flex-direction: row;
         right: 10px;
         height: 3rem; 
         font-size: 14pt;
     }
 
-    .mobile-menu{
+    .mobile-toggle{
+        display: none;
+    }
+
+    .mobile-menu-button{
         visibility: hidden;
     }
 
@@ -911,7 +922,9 @@ form{
     }
 
     .nav-button {
-        display: inline;
+        margin: 10px 10px;
+        display: block;
+        /* display: inline; */
     }
 
      #logo{
@@ -921,11 +934,9 @@ form{
 
     .title {
         font-size: 32pt;
-        margin-top: 8rem;
-        margin-bottom: 1rem;
-        padding-top: 0rem;
+        padding-top: 0;
+        margin: 1rem auto;
         width: 100%;
-        background-color: rgb(205, 207, 237);
         opacity: .9;
     }
 
@@ -934,9 +945,10 @@ form{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: auto;
+        width: 100vw;
+        height: 100vh;
         margin: 0 auto;
+        padding-top: 2rem;
     }
 
     .swatchContainer {
@@ -957,13 +969,18 @@ form{
         display: flex;
 }
 
-/* PALETTE PALETTE PALETTE PALETTE PALETTE PALETTE PALETTE PALETTE PALETTE PALETTE*/
+/* -----------------------------------------PALETTE-----------------------------------------*/
+
+    /* .moodTitle{
+        padding-top: 6rem;
+        font-size: 2.5rem;
+    } */
 
     .paletteContainer {
         position: fixed;
-        height: 100%;
-        width: auto;
-        top: 0;
+        height: calc(100% - 6rem);
+        width: 40%;
+        top: 6rem;
         left: 0;
         display: flex;
         flex-direction: row;
@@ -1055,6 +1072,7 @@ form{
     .outerMoodWrapper{
         display: flex;
         flex-direction: column;
+        padding-top: 6rem;
     }
 
     .addNewMood{
@@ -1127,9 +1145,9 @@ form{
         height: calc(100% - 6rem);
     }
 
-    /* .mood-modal{
-        align-self: center
-    } */
+    .mood-modal{
+        align-self: flex-start;
+    }
     
 
 /* desktop about page ================================================================ */
@@ -1178,21 +1196,29 @@ form{
     }
 
     .menu {
+        top: 1rem;
+        display: flex;
+        flex-direction: row;
         right: 20px;
         font-size: 14pt;
     }
 
-    .mobile-menu{
-        visibility: hidden;
-        
+    .mobile-toggle{
+        display: none;
+    }
+
+    .mobile-menu-button{
+        visibility: hidden;  
     }
 
     li {
         line-height: 3rem;
     }
 
-     .nav-button {
-        display: inline;
+    .nav-button {
+         margin: 10px 10px;
+         display: block;
+        /* display: inline; */
     }
 
     #logo{
@@ -1202,8 +1228,7 @@ form{
 
     .title {
         font-size: 44pt;
-        margin-top: 8rem;
-        padding-top: 0rem;
+        padding-top: 2rem;
         width: 100%;
     }
 
@@ -1212,8 +1237,9 @@ form{
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        padding-top: 4rem;
         width: 100%;
-        height: auto;
+        height: 100%;
         margin: 0 auto;
     }
 
@@ -1234,6 +1260,8 @@ form{
     }
 
     .paletteContainer {
+        width: 50%;
+        height: calc(100% - 6rem);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -1309,6 +1337,10 @@ form{
     .boardDisplay{
         width: 75vw;
         margin-top: 2rem;
+    }
+
+    .mood-modal{
+        align-self: flex-start;
     }
 
     .mood-circle-data{
