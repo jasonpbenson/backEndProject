@@ -2,14 +2,25 @@
 let menu = document.querySelector('.menu');
 let navButtons = document.querySelectorAll('.nav-button')
 let navArray = Array.from(navButtons)
-let mobileMenu = document.querySelector('.mobile-menu')
+let mobileMenuButton = document.querySelector('.mobile-menu-button')
 
 
 // mobile menu JS ========================================================>
-mobileMenu.addEventListener('click', () => {
+mobileMenuButton.addEventListener('click', () => {
+    menu.style.display = "flex";
     navArray.forEach(function(button){
         button.style.display = 'block';
-        button.style.textAlign = 'right';
+        button.style.padding = '1rem';
         button.style.backgroundColor = '#4c0be8';
     })
+    
 })
+
+// remove mobile menu/buttons if screen is resized
+window.addEventListener("resize", () => {
+  if (mobileMenuButton.style.display == "block") {
+    // navArray.forEach(function(button) {
+    //   button.style.display = "none";
+    // });
+  }
+});

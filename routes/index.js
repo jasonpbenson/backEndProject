@@ -35,6 +35,7 @@ router.get('/', (req, res, next) => {
   } 
 });
 
+// route for changing status so that they don't get the 'welcome' page again
 router.post('/', (req, res, next) => {
   let msg;
   const statusQuery = `UPDATE users 
@@ -46,6 +47,7 @@ router.post('/', (req, res, next) => {
   })
 })
 
+// route for 'welcome' page for new users
 router.get('/welcome', (req, res, next) => {
   let msg;
   if (!req.session.loggedIn) {
@@ -56,6 +58,7 @@ router.get('/welcome', (req, res, next) => {
   }
 })
 
+// splash page (effectively home not logged in)
 router.get('/splash', (req, res, next) => {
   let msg;
   if (req.query.msg == 'mustLogIn') {
@@ -65,6 +68,7 @@ router.get('/splash', (req, res, next) => {
   res.render('splash', {msg})
 })
 
+// route for login page
 router.get("/login", (req, res, next) => {
   let msg;
   if(req.query.msg == 'noUser'){  //if query parameters, after the ? mark;
@@ -72,10 +76,10 @@ router.get("/login", (req, res, next) => {
   }else if(req.query.msg == 'badPass'){
       msg = '<h2 class="badPassword">This password is not associated with this email. Please enter again.</h2>'
   }
-  // console.log(msg); we are receiving message in console.
-res.render('login',{msg});
+  res.render('login',{msg});
 });
 
+// route for login process
 router.post('/loginProcess',(req, res, next)=>{
   const email =  req.body.email;
   const password = req.body.password;
@@ -101,6 +105,7 @@ router.post('/loginProcess',(req, res, next)=>{
   });
 });
 
+// registration page
 router.get("/register", (req, res, next) => {
   let msg = "";
   if (req.query.msg == 'registered') {
@@ -115,7 +120,7 @@ router.get("/register", (req, res, next) => {
   });
 })
  
-// registerProcess
+// register process
 const passwordRegex = new RegExp("^.{6,}$");
 router.post('/registerProcess', (req, res, next) => {
   const hashedPass = bcrypt.hashSync(req.body.password);
@@ -140,6 +145,7 @@ router.post('/registerProcess', (req, res, next) => {
   // res.json(req.body)
 })
 
+// post route for adding new mood data
 router.post("/addMood", (req, res, next) => {
   const newMood = req.body.newMood;
   const newColor = req.body.newColor;
@@ -158,37 +164,40 @@ router.post("/addMood", (req, res, next) => {
   })
 })
 
+// route for getting data from DB to display moodboards; default time is current week
 router.get("/moodBoards", (req, res, next) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/splash?msg=mustLogIn')
+  } else {
+    const selectQuery = `SELECT mood, color, note, date FROM moodData
+    WHERE uid = ? 
+    ORDER BY date DESC
+    LIMIT 6;`
+    connection.query(selectQuery, [req.session.uid], (err, results) => {
+      // console.log("I am the latest")
+      if (err) {
+        throw err
+      }
+      res.render('moodBoards', { results, timeline: 'week' })
+    })
+  }
+})
+
+
+// route for getting specific day
+router.get("/moodBoards/week", (req, res, next) => {
   if (!req.session.loggedIn) {
     res.redirect('/splash?msg=mustLogIn')
   } else {
     const selectQuery = `SELECT mood, color, note, date FROM moodData
     WHERE WEEK(date) = WEEK(NOW()) AND uid = ? 
     ORDER BY date DESC;`
-    connection.query(selectQuery, [req.session.uid], (err, results) => {
-      console.log("I am a week")
-      // console.log(results)
-      if (err) {
-        throw err
-      }
-        res.render('moodBoards', { results, timeline: 'week' })
-    })
-  }
-})
-
-router.get("/moodBoards/day", (req, res, next) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/splash?msg=mustLogIn')
-  } else {
-    const selectQuery = `SELECT mood, color, note, date FROM moodData
-    WHERE uid = ? AND date = CURDATE()
-    ORDER BY date DESC`;
     connection.query( selectQuery, [req.session.uid], (err, results) => {
-      console.log("I am a day")
+      // console.log("I am a week")
       if(err) {
         throw err
       } else {
-      res.render("moodBoards", {results, timeline: 'day'})
+        res.render("moodBoards", {results, timeline: 'week'})
       }
     })
   }

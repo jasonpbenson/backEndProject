@@ -172,9 +172,12 @@ resetButton.addEventListener('click', (event) => {
 saveButton.addEventListener('click', (event) => {
     let savedColor = palette.style.backgroundColor 
     formColor.value = savedColor
-    document.querySelector('.swatchContainer').style.display = 'none';
+    document.querySelector(".swatchContainer").style.display = 'none';
     document.querySelector(".editorContainer").style.display = 'none'
     document.querySelector(".textContainer").style.display = 'flex';
     document.querySelector(".submitContainer").style.display = 'flex';
+    document.querySelector(".paletteContainer").classList.add('mobileHide')
+    document.querySelector(".palette").classList.add("mobileHide");
+    // document.querySelector(".addNewMood").style.flexDirection = 'column';
     document.querySelector("#today").valueAsDate = new Date();
 })
